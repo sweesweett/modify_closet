@@ -1,0 +1,75 @@
+{#google icons#}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../static/common.css">
+<link href="../static/board.css" rel="stylesheet">
+{% include 'head.html' %}
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			url: "/trade/list",
+			data: {},
+			success: function (response) {
+				let rows = response['lists']
+
+				for(let i=0;i < rows.length;i++) {
+					let img_path = rows[i]['image_path'];
+					let title = rows[i]['title'];
+					let status = rows[i]['status'];
+					let price = rows[i]['price'];
+					let trade_id = rows[i]['_id'];
+          let order = 0
+					let price_s = parseInt(price).toLocaleString()
+
+					let tmp_html = `<div class="col-sm-6 col-md-3">
+									<div class="thumbnail" onclick="location.href='/trade/view?goods_id=${trade_id}'">
+										<img src="${img_path}" alt="..." style="width:225px; height:260px;">
+										<div class="caption">
+										<h4>${title}</h4>
+										<p class="list_cost"><span class="format-money">${price_s}</span>원</p>
+										<p class="list_status">${status}</p>
+										</div>
+									</div>
+								</div>`
+
+					$('#list_card').prepend(tmp_html);
+				}
+			}
+		})
+	})
+window.addEventListener('scroll',function(){
+    let upBtn = document.querySelector('.side_up')
+    if(window.scrollY >300){
+      upBtn.style.display='flex'
+      upBtn.addEventListener('click',function(){
+        window.scrollTo({top:0,behavior:'smooth'})
+
+      })
+
+    }
+    else {
+      upBtn.style.display='none'
+    }})
+</script>
+<body>
+{#위로올라가기 버튼#}
+  <div class="side_up">
+  <span class="material-icons">arrow_upward</span>
+  </div>
+<div class="container">
+    <nav class="nav">
+        <a class="nav-link " target-content="rank-content" href="/community">코디 랭킹</a>
+        <a class="nav-link active" target-content="transaction-content" href="#">중고 거래</a>
+    </nav>
+    <section class="trade_list">
+		<div class="newtrade_wrap"><a class="new_trade" href='/trade/write'>등록하기</a></div>
+
+		<div class="row" id="list_card">
+
+		</div>
+     </section>
+	</div>
+</div>
+</body>
+</html>
+

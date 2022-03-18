@@ -1,0 +1,405 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*common*/
+body {
+  font-family: Pretendard-Regular;
+}
+
+input[type="text"]:disabled {
+  background-color: white;
+}
+
+.modal{
+  overflow-y: scroll;
+}
+
+.container {
+  background-color: #ffebfd;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 120px auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+
+
+/*nav bar*/
+.container .nav {
+  padding: 10px;
+}
+
+.container .nav .nav-link {
+  color: #b081c5;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+.container .nav a{
+   text-decoration: none;
+}
+.container .nav a.active {
+  color: #61237f;
+  font-weight: bold;
+  background-color: var(--purple-emp);
+  border-radius: 12px;
+  color: var(--white);
+}
+
+
+/*trade list*/
+
+
+.container .trade_list {
+  padding: 10px;
+
+}
+
+.container .trade_list .newtrade_wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.container .trade_list .new_trade {
+  text-decoration: none;
+  display: block;
+  font-size: var(--font-medium-large);
+  margin-right: 5px;
+  background-color: transparent;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  transition:border-bottom .5s,
+  color .5s;
+
+}
+
+.container .trade_list .new_trade:hover {
+  border-bottom: 2px solid var(--purple-emp);
+  color:var(--black);
+}
+.container .trade_list #list_card{
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+  /*flex-wrap: wrap;*/
+  /*최신순이 첨에와야하는데ㅜㅜ*/
+}
+.container .trade_list #list_card .thumbnail {
+  padding-top: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, .7);
+  transition: transform .5s,
+  background-color .5s;
+
+}
+
+.container .trade_list #list_card .thumbnail:hover {
+  transform: scale(1.05);
+  background-color: var(--white);
+
+}
+
+/*trade_write*/
+
+/*modal*/
+.modal-bg{
+  display: none;
+  position:fixed;
+  content:"";
+  width:100%;
+  height:calc(100% - 70px);
+  top:70px;
+  left:0;
+  background-color:rgba(0,0,0,.5);
+}
+
+.modal-wrap{
+  display: none;
+  position:absolute;
+  width:700px;
+  height:500px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  top:200px;
+  left:calc(50% - 350px);
+  border-radius:12px;
+  background-color:var(--white);
+
+}
+.modal-wrap .xbtn-bar{
+  width:100%;
+  height:40px;
+  box-sizing: border-box;
+  background-color:var(--purple);
+  color:#fff;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+}
+.modal-wrap .xbtn-bar .material-icons{
+  cursor:pointer;
+}
+
+.modal-wrap .modal-pic{
+  padding:20px 10px 10px;
+}
+
+.modal-wrap .modal-pic p{
+  font-size: var(--font-large);
+  font-weight: 700;
+  text-align: center;
+  padding:10px;
+}
+.modal-wrap .modal-pic .img_closet{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.modal-wrap .modal-pic .img_closet img{
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+
+
+/*Contents*/
+.container .write_title{
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0 20px;
+}
+.container .sell_form{
+  width: 90%;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+.container .sell_form .info_clothes{
+  display: flex;
+}
+.container .sell_form .clothes_pic{
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+
+}
+.container .sell_form .clothes_pic .pic_wrap{
+  content:"";
+  background-color:white;
+  background-size: cover;
+  width: 300px;
+  height:300px;
+}
+.container .sell_form .info_clothes #goods_img{
+  display: block;
+  border-radius: 5px;
+  max-width: 300px;
+  max-height: 300px;
+}
+.container .sell_form .info_clothes button{
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-weight: 700;
+}
+.container .sell_form .info_clothes .info_detail{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--font-large);
+  /*margin: 50px 100px;*/
+  /*마진정리 나중예*/
+}
+.container .sell_form .info_clothes .info_detail .detail{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.container .sell_form .info_clothes .info_detail .detail span:first-child{
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray);
+  margin-bottom:10px;
+}
+.container .sell_form .info_clothes .info_detail .detail .color-wrap{
+  display: flex;
+  justify-content: center;
+
+}
+.container .sell_form .info_clothes .info_detail .detail #colorShow{
+  content:"";
+  width:16px;
+  height:16px;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+.container .sell_form .sell_details{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.container .sell_form .sell_details label{
+  font-size: 18px;
+
+}
+.container .sell_form .sell_details input{
+  font-size: var(--font-medium-large);
+  margin-bottom:10px;
+  padding:7px;
+  border-radius: 5px;
+  border:1px solid var(--gray);
+}
+.container .sell_form .sell_details textarea{
+  font-size: var(--font-medium-large);
+  margin-bottom:10px;
+  padding:7px;
+  border-radius: 5px;
+  border:1px solid var(--gray);
+  height:20vh;
+  outline:none;
+}
+.container .sell_form .sell_details input[type="submit"]{
+  width:200px;
+  padding:10px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: var(--font-large);
+}
+
+/*trade_view*/
+
+/*trade_view의 content*/
+.container .auth{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+.container .auth a,
+.container .auth span{
+  cursor:pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color .5s, color .5s;
+
+}
+.container .auth a:hover,
+.container .auth span:hover{
+  color:var(--black);
+  border-bottom-color: var(--purple-emp);
+}
+.container .product_info {
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+}
+
+.container #goods_img {
+  flex: 1 1 30%;
+  width: 350px;
+  height: 350px;
+
+}
+
+.container .info_all {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--font-large);
+  padding: 80px;
+  box-sizing: border-box;
+
+}
+.container .info_all li{
+    padding-top:15px;
+}
+.container .info_all .title{
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+    flex:20%;
+    border-bottom: 2px solid var(--black) ;
+
+}
+.container .info_all .status{
+    font-size: var(--font-large);
+    font-weight: bold;
+    flex:15%;
+
+}
+.container .info_all .price{
+    font-size: var(--font-large);
+    font-weight:bold;
+    flex:15%;
+
+
+}
+.container .info_all .desc{
+    font-size: var(--font-large);
+    flex:50%;
+}
+
+
+/*trade_view의 comments*/
+.comment_wrap{
+  padding: 10px;
+  margin: 10px auto;
+}
+.comment_write{
+  padding:10px;
+}
+.comment_view {
+  padding: 10px;
+}
+
+.comment_out {
+  border-bottom: 1px solid var(--gray);
+  padding: 15px 0px 15px 0px;
+}
+.comment_out #comment_auth{
+  text-decoration: none;
+   cursor:pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.com_username {
+  padding-bottom: 15px;
+}
+
+.comment_input {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment_text {
+outline:none;
+}
+
+.comment_btn {
+  margin-left: 20px;
+  padding:10px;
+  background-color: var(--light-gray);
+  border:none;
+  border-radius: 5px;
+  font-weight: 700;
+  box-sizing: border-box;
+  transition: background-color .3s, color .3s;
+}
+.comment_btn:hover{
+  background-color: var(--purple-emp);
+  color:var(--white);
+
+}

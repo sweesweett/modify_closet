@@ -1,0 +1,210 @@
+
+.wrap{
+  max-width:600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:150px auto 0;
+  
+}
+.title{
+  font-size: 30px;
+  font-weight: 700;
+  padding:5px;
+  font-family:'Redressed','Nanum Brush Script',cursive;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.wrap .auth{
+
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 12px;
+}
+.wrap .auth .btn-wrap{
+  display: flex;
+}
+.wrap .auth .btn-wrap .btn{
+  width: 200px;
+  border:none;
+  border-radius: 12px 12px 0 0;
+  background-color: var(--white);
+}
+
+.wrap .auth .btn-wrap .btn.show{
+  background-color: var(--purple-rgba);
+  color:var(--white);
+
+}
+.wrap .auth .container {
+  padding:10px;
+  box-sizing: border-box;
+  background-color: var(--purple-rgba);
+  border-radius: 0 0 12px 12px;
+}
+.wrap .auth .container .form{
+  display:none;
+  width:90%;
+  margin:0 auto;
+  padding:10px;
+
+}
+
+.wrap .auth .container .form.show{
+  display: flex;
+  flex-direction: column;
+  color:var(--white);
+}
+.wrap .auth .container .form.show #same,
+.wrap .auth .container .form.show #already{
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+.wrap .auth .container input{
+  margin-bottom:10px;
+  padding:7px;
+  border-radius: 5px;
+  border:2px solid var(--purple-btn-border);
+  box-sizing: border-box;
+
+}
+.wrap .auth .container .form .valid-email{
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .auth .container .form .valid-email #signup-email{
+  flex:80%;
+}
+.wrap .auth .container .form .valid-email .valid{
+  height:35px;
+  flex: 20%;
+  margin-left: 5px;
+  font-size:var(--font-medium);
+  padding:2px;
+  border:none;
+
+}
+.wrap .submit{
+  display: none;
+  width:350px;
+  font-size: var(--font-large);
+  font-weight: 700;
+  background-color:rgba(145,80,175,.9);
+  border-radius: 10px;
+  padding:10px;
+  margin-top:20px;
+  cursor:pointer;
+  box-sizing: border-box;
+  border:none;
+}
+.wrap .submit.show{
+  display: block;
+  color:var(--white);
+}
+.wrap .submit.show:hover{
+  background-color: var(--purple-emp);
+}
+
+
+/*sns 로그인*/
+
+.sns-login{
+ display: none;
+  margin: 10px auto;
+}
+.sns-login.show{
+  display: block;
+}
+.sns-login .sns-letter{
+  text-align: center;
+  color:var(--purple);
+}
+.sns-login .sns-buttons{
+  width: 200px;
+  padding:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sns img{
+  width:35px;
+  margin:0 10px;
+  border-radius:50%;
+}
+/*비밀번호 찾기 버튼*/
+
+
+.wrap .find-pwd{
+  margin-top: 10px;
+  padding:10px;
+  color:var(--black);
+  cursor:pointer;
+}
+
+
+/*비밀번호찾기 모달창*/
+.modal-bg{
+  display: none;
+  position:fixed;
+  content:"";
+  width:100%;
+  height:calc(100% - 80px);
+  top:70px;
+  left:0;
+  background-color:rgba(0,0,0,.5);
+}
+
+.modal-wrap{
+  display: none;
+  position:absolute;
+  width:400px;
+  height:300px;
+  box-sizing: border-box;
+  top:200px;
+  border-radius:12px;
+  background-color:var(--white);
+
+}
+.modal-wrap .xbtn-bar{
+  width:100%;
+  height:40px;
+  box-sizing: border-box;
+  background-color:var(--purple);
+  color:#fff;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+}
+.modal-wrap .xbtn-bar .material-icons{
+  cursor:pointer;
+}
+.modal-wrap .modal-findpw{
+  width:100%;
+  display: flex;
+  justify-content: center;
+
+}
+.modal-wrap .modal-findpw .findpw-form{
+  padding-top:20px;
+}
+
+.modal-wrap .modal-findpw #findpw-id{
+  margin-right:10px;
+  padding:7px;
+  border-radius: 5px;
+  border:2px solid var(--purple-btn-border);
+  box-sizing: border-box;
+}
+.modal-wrap .modal-findpw #findpw-btn{
+  font-size:var(--font-medium);
+  display: inline;
+}
