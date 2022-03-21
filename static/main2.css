@@ -11,12 +11,13 @@ body{
 }
 .wrap .title{
   text-align: center;
-  margin-top:30px;
-  padding:10px;
+  margin:80px 0 0;
+  padding-bottom:10px;
 }
 .wrap .desc{
   text-align: center;
-  padding:20px;
+  padding:10px;
+  height:60px;
 }
 .wrap .wrap-closet{
   display: flex;
@@ -29,46 +30,28 @@ body{
 
 .wrap .wrap-closet #main-closet{
   width:300px;
+  cursor: pointer;
 }
-/* 
-.main-wrap{
- 
- }
- .main-wrap a{
-   cursor: pointer;
- }
- .main-wrap .wrap-closet{
-   width:19vw;
-   min-width: 300px;
+.wrap .wrap-closet #opencloset{
+  position:absolute;
+  width:200px;
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border:none;
+  box-sizing: border-box;
+  font-size:20px;
+  letter-spacing: 5px;
+  border-radius: 12px;
+  background-color: var(--light-purple-rgba);
+  color:var(--white);
+  display: none;
+  cursor: pointer;
 
- }
- .main-wrap #main-closet{
-   display: block;
-   margin: auto;
-   width:19vw;
-   min-width: 300px;
- 
- }
- .main-wrap #opencloset{
-   text-align: center;
-   color:var(--white);
-   width:12.5vw;
-   min-width: 200px;
-   box-sizing: border-box;
-   font-size:30px;
-   letter-spacing: 5px;
-   border-radius: 12px;
-   border:none;
-   padding:20px;
-   background-color: var(--purple-rgba);
-   position:absolute;
-   top:calc(50%);
-   left:calc(50% - 6.25vw);
-   display: none;
-   cursor:pointer;
-   z-index: 10;
- }
- .main-wrap .wrap-closet:hover #opencloset{
-   display: block;
- 
- } */
+}
+.wrap .wrap-closet:hover #opencloset{
+  display: block;
+
+}

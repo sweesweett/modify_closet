@@ -10,7 +10,8 @@
   min-width: 300px;
   position:absolute;
   bottom: 5vh;
-  left:calc(50% - 9.5vw);
+  left:50%;
+  transform: translateX(-50%);
 }
 .main-wrap #main-closet{
   display: block;
@@ -33,7 +34,8 @@
   background-color: var(--purple-rgba);
   position:absolute;
   top:calc(50%);
-  left:calc(50% - 6.25vw);
+  left:50%;
+  transform: translateX(-50%);
   display: none;
   cursor:pointer;
   z-index: 10;
