@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
         rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -28,6 +28,24 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="left header_icon">
+      <span class="material-icons">home</span>
+      <span class="icon-name">home</span>
+    </div>
+    <div class="right header_icons">
+      <div class="right header_icon 1">
+        <span class="material-icons">
+          assignment
+        </span>
+        <span class="icon-name">join</span>
+      </div>
+      <div class="right header_icon 2"><span class="material-icons">
+          login
+        </span>
+        <span class="icon-name">login</span></div>
+    </div>
+  </header>
   <div class="wrap">
   <h2 class="title">WHAT'S IN MY CLOSET!</h2>
   <div class="desc"></div>
@@ -38,7 +56,8 @@
   <div class="wrap-closet">
   <img id="main-closet" src="../static/closet_with_clothes.png" alt="closet"  onclick="location.href='/mycloset.html'">
   <button id="opencloset"onclick="location.href='/mycloset.html'">OPEN</button>
-  </div>
+  <span class="enter-desc">옷장 클릭해서 들어가기</span>
+</div>
 <div class="right-wrap">
 
 </div>
