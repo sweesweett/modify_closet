@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +13,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
   <!-- css -->
   <link href="./static/common2.css" rel="stylesheet">
-  <link href="./static/main2.css" rel="stylesheet">
+  <link href="./static/mycloset.css" rel="stylesheet">
   <!-- JS -->
-  <script defer src="./static/main.js"></script>
+  <script defer src="./static/mycloset.js"></script>
 </head>
-
 <body>
   <!-- header -->
   <header class="header">
@@ -40,9 +38,14 @@
         <span class="icon-name">login</span></a>
     </div>
   </header>
+  <!-- main -->
   <div class="wrap">
-    <h2 class="title">WHAT'S IN MY CLOSET!</h2>
-    <div class="desc"></div>
+    <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
+    <div class="desc">
+      <span>서울시의 날씨는 10도 흐림(이모지)<br>오늘의 날씨에 맞는 옷을 추천해 드릴까요?</span>
+      <button class="recommend">추천하기</button>
+    </div>
+
     <section class="content">
       <div class="left-wrap">
         <!-- <span class="material-icons">thermostat</span> -->
@@ -50,11 +53,9 @@
       <div class="wrap-closet">
         <img id="main-closet" src="../static/closet_with_clothes.png" alt="closet"
           onclick="location.href='/mycloset.html'">
-        <button id="opencloset" onclick="location.href='/mycloset.html'">OPEN</button>
-        <span class="enter-desc">옷장 클릭해서 들어가기</span>
       </div>
       <div class="right-wrap">
-
+        <span class="material-icons" id="upload_btn" >add_circle</span>
       </div>
     </section>
   </div>
