@@ -40,22 +40,30 @@
   </header>
   <!-- main -->
   <div class="wrap">
+    <section class="info">
     <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
     <div class="desc">
       <span>서울시의 날씨는 10도 흐림(이모지)<br>오늘의 날씨에 맞는 옷을 추천해 드릴까요?</span>
-      <button class="recommend">추천하기</button>
+      <button class="recommend">추천하기</button>   
     </div>
+  </section> 
 
     <section class="content">
       <div class="left-wrap">
-        <!-- <span class="material-icons">thermostat</span> -->
+        <input type="range" class="temp_range" value="0" min="-20" max="40">
+        <p class="temp_val">15</p>
+        <button class="confirm_temp">추천!</button>
+        <span class="material-icons">thermostat</span>
+
       </div>
       <div class="wrap-closet">
         <img id="main-closet" src="../static/closet_with_clothes.png" alt="closet"
           onclick="location.href='/mycloset.html'">
       </div>
       <div class="right-wrap">
+        
         <span class="material-icons" id="upload_btn" >add_circle</span>
+  
       </div>
     </section>
   </div>
