@@ -1,10 +1,14 @@
-let temperature = document.querySelector('.temp_val')
-let tempRange = document.querySelector(".temp_range");
+const temperature = document.querySelector('.temp_val')
+const tempRange = document.querySelector(".temp_range");
 
+tempRange.oninput = rangeInput;
+temperature.oninput =tempInput;
 
-tempRange.oninput = handleInput;
-
-function handleInput(e) {
-  temperature.innerHTML = `${e.target.value}`
- 
+function rangeInput(e) {
+  temperature.value = e.target.value
 }
+function tempInput(e) {
+  tempRange.value = e.target.value
+}
+const visibleBtn =document.querySelector('.rangeslider')
+const therBtn = document.getElementById('therBtn')
