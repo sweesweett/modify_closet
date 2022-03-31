@@ -55,34 +55,37 @@ letter-spacing: 2px;
 }
 
 .header{
-  width:400px;
-  position:fixed;
+  margin:0 auto;
   height:50px;
-  left:calc(50% - 200px);
-  top:0;
   background-color: var(--light-purple);
   z-index: 10;
+ 
+}
+.header .inner {
+  margin: 0 auto;
+  max-width: 1100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header .header_icons{
+.header .inner .header_icons{
   display: flex;
 }
-.header .material-icons{
+.header .inner .material-icons{
   font-size: 24px;
 }
-.header .header_icon{
+.header .inner .header_icon{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:45px;
-  height:45px;
+  width:40px;
+  height:40px;
   color:var(--white);
   cursor: pointer;
+  padding:5px;
 }
-.header .header_icon .icon-name{
+.header .inner .header_icon .icon-name{
   font-size: 10px;
 }
 /* header */
