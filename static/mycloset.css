@@ -6,10 +6,19 @@ body{
   position:fixed;
   top:50px;
   left:0;
-  width:100%;
+  width:100vw;
   height:calc(100% - 50px);
   background-color: rgba(0,0,0,.5);
   z-index: 11;
+  overflow-y: hidden;
+  display:none;
+}
+#closeBtn{
+  position:fixed;
+  top:60px;
+  right:10px;
+  color:var(--white);
+  z-index:12;
 }
 .wrap{
   margin-top:80px;
@@ -17,22 +26,19 @@ body{
   max-width:1100px;
   height:calc(100vh - 50px);
   position:relative;
+  overflow-y: hidden;
 }
 /* expain */
 /* 모달 배경은 우선 만들어두기. 내일 순서 맞춰서 지금까지 한거 css 변경 필요함 */
 .wrap .explain_closet{
   position:absolute;
+  width:100%;
   top:-10px;
   left:0;
-  width:100vw;
+  max-width: 1100px;
   height:calc(100vh - 50px);
   z-index: 12;
-}
-.wrap .explain_closet #closeBtn{
-  position:absolute;
-  top:10px;
-  right:10px;
-  color:var(--white);
+  display:none;
 }
 .wrap .explain_closet .ther_explain{
   width:150px;
@@ -78,7 +84,7 @@ color:var(--light-purple);
   width:150px;
   position:absolute;
   bottom:10vh;
-  right:10px;
+  right:0;
   padding:7px;
   border-radius: 10px;
   background-color: var(--light-purple);
@@ -237,20 +243,7 @@ color:var(--light-purple);
   display: block;
 
 } */
-.wrap .content .wrap-closet .enter-desc{
-  padding:20px;
-  position:relative;
-  font-weight: 700;
-}
-.wrap .content .wrap-closet .enter-desc::before{
-  content:'';
-  width:130px;
-  height:10px;
-  background-color: var(--purple-btn-border);
-  position:absolute;
-  top:30px;
-  left:25px;
-}
+
 .wrap .content .right-wrap .qmark{
   background-color: var(--white);
   border:2px solid black;
@@ -264,9 +257,9 @@ color:var(--light-purple);
   
 }
 .wrap .content .right-wrap #upload_btn{
-  font-size: 50px;
+  font-size: 60px;
   position:absolute;
-  bottom:30px;
-  right:30px;
+  bottom:20px;
+  right:0;
   color:var(--purple);
 }

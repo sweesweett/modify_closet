@@ -58,7 +58,7 @@ letter-spacing: 2px;
   margin:0 auto;
   height:50px;
   background-color: var(--light-purple);
-  z-index: 10;
+  z-index: 15;
  
 }
 .header .inner {
