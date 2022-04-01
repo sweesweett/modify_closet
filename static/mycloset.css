@@ -11,8 +11,7 @@ body{
   background-color: rgba(0,0,0,.5);
   z-index: 11;
   overflow-y: hidden;
-  display:none;
-}
+} 
 #closeBtn{
   position:fixed;
   top:60px;
@@ -38,7 +37,6 @@ body{
   max-width: 1100px;
   height:calc(100vh - 50px);
   z-index: 12;
-  display:none;
 }
 .wrap .explain_closet .ther_explain{
   width:150px;
@@ -151,6 +149,7 @@ color:var(--light-purple);
   top:-10px;
   right:20%;
   border-radius: 50%;
+  z-index: -1;
 }
 
 /* left buttons */
