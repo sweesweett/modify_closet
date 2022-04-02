@@ -5,6 +5,7 @@
   font-style: normal;
 }
 :root{
+--background:#f6edff;  
 --white:#f6f6f6;
 --light-purple:#c37ee1;
 --purple:#9150AF;
@@ -34,6 +35,7 @@ body{
 margin:0;
 font-family: var(--font-default);
 font-size:var(--font-medium-large);
+background-color: #f6edff;
 
 }
 a{

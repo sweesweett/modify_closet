@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+  <!-- swiper -->
+  <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <!-- css -->
   <link href="./static/common.css" rel="stylesheet">
   <link href="./static/mycloset.css" rel="stylesheet">
@@ -42,7 +45,7 @@
   </header>
   <!-- main -->
   <div class="bg"></div>
-  <div class="material-icons" id="closeBtn">close</div>
+  <div class="material-icons" id="closeBtn" onclick="closeExplain()">close</div>
   <div class="wrap">
     <div class="explain_closet">
       
@@ -65,16 +68,19 @@
         <input type="range" class="temp_range" value="0" min="-20" max="40">
         <button class="confirm_temp">추천!</button>
         </div>
-        <span class="material-icons" id="therBtn">thermostat</span>
+        <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
 
       </div>
       <div class="wrap-closet">
         <img id="main-closet" src="../static/closet_with_clothes.png" alt="closet"
           onclick="location.href='/mycloset.html'">
+            <!-- Slider main container -->
+      <div class="swiper_location">
+        여기 위치 스와이퍼
       </div>
       <div class="right-wrap">
-        <div class="qmark">?</div>
-        <span class="material-icons" id="upload_btn" >add_circle</span>
+        <div class="qmark" onclick="openExplain()">?</div>
+        <span class="material-icons" roll="button" id="upload_btn" >add_circle</span>
   
       </div>
     </section>
