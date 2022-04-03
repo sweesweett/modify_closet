@@ -55,6 +55,9 @@ textarea{
 font-family: 'Noto Sans KR', sans-serif;
 letter-spacing: 2px;
 }
+button{
+  font-family: var(--font-default),sans-serif;
+}
 
 .header{
   margin:0 auto;
