@@ -221,37 +221,34 @@ color:var(--light-purple);
 
 
 /* closet */
+
 /* liststyle */
 .wrap .content .main-wrap{
-
+  padding: 0 10px; 
 }
 .wrap .content .main-wrap .list{
   display: flex;
   align-items: center;
-  padding:8px;
-  margin:0 15px;
   border-bottom: 1px solid var(--light-gray);
+  display: none;
 }
 .wrap .content .main-wrap .list .img{
-  width:70px;
-  height:70px;
+  width:75px;
+  height:75px;
   margin-right:10px;
 }
-.wrap .content .main-wrap .list .titletags{
+.wrap .content .main-wrap .titletags{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height:70px;
+  justify-content: space-evenly;
+  height:75px;
   box-sizing: border-box;
 }
-.wrap .content .main-wrap .list .titletags .cardtitle{
+.wrap .content .main-wrap .titletags .cardtitle{
   font-weight: 700;
   font-size: 16px;
 }
-.wrap .content .main-wrap .list .titletags .tagsgroup{
-
-}
-.wrap .content .main-wrap .list .titletags .tagsgroup button{
+.wrap .content .main-wrap .titletags .tagsgroup button{
   border-radius: 10px;
   background-color: none;
   box-shadow: none;
@@ -259,21 +256,44 @@ color:var(--light-purple);
   color:white;
   font-weight: 700;
   font-size: 12px;
+  cursor: pointer;
 
 }
-.wrap .content .main-wrap .list .titletags .tagsgroup button:first-child{
+.wrap .content .main-wrap .titletags .tagsgroup button:hover{
+  transform: scale(1.05);
+}
+.wrap .content .main-wrap .titletags .tagsgroup button:first-child{
   background-color: red;
 }
-.wrap .content .main-wrap .list .titletags .tagsgroup button:nth-child(2){
+.wrap .content .main-wrap .titletags .tagsgroup button:nth-child(2){
   background-color: blue;
 }
-.wrap .content .main-wrap .list .titletags .tagsgroup button:nth-child(3){
+.wrap .content .main-wrap .titletags .tagsgroup button:nth-child(3){
   background-color: violet;
 }
-.wrap .content .main-wrap .list .titletags .tagsgroup button:last-child{
+.wrap .content .main-wrap  .titletags .tagsgroup button:last-child{
   background-color: pink;
 }
 
+.wrap .content .main-wrap .big{
+  margin: 10px auto;
+  border-bottom: 1px solid var(--light-gray);
+}
+.wrap .content .main-wrap .big .img{
+  width: 280px;
+  height:280px;
+  display: block;
+  margin:auto;
+
+}
+.wrap .content .main-wrap .big .titletags{
+  width:280px;
+  margin:0 auto;
+  padding: 0 5px;
+}
+.wrap .content .main-wrap .list .titletags .tagsgroup{
+  
+}
 .wrap .content .right-wrap .qmark{
   background-color: var(--white);
   border:2px solid black;
