@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,12 @@
   <!-- google icons+font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
-        rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- swiper -->
-  <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <!-- css -->
   <link href="./static/common.css" rel="stylesheet">
@@ -20,138 +22,98 @@
   <!-- JS -->
   <script defer src="./static/mycloset.js"></script>
 </head>
+
 <body>
   <!-- header -->
   <header class="header">
     <div class="inner">
-    <a class="left header_icon" href="index.html">
-      <span class="material-icons">home</span>
-      <span class="icon-name">home</span>
-    </a>
-    <div class="right header_icons">
-      <a class="right header_icon 1" href="/signup.html">
-        <span class="material-icons">
-          assignment
-        </span>
-        <span class="icon-name">join</span>
+      <a class="left header_icon" href="index.html">
+        <span class="material-icons">home</span>
+        <span class="icon-name">home</span>
       </a>
-      <a class="right header_icon 2" href="/login.html">
-        <span class="material-icons">
-          login
-        </span>
-        <span class="icon-name">login</span></a>
+      <div class="right header_icons">
+        <a class="right header_icon 1" href="/signup.html">
+          <span class="material-icons">
+            assignment
+          </span>
+          <span class="icon-name">join</span>
+        </a>
+        <a class="right header_icon 2" href="/login.html">
+          <span class="material-icons">
+            login
+          </span>
+          <span class="icon-name">login</span></a>
+      </div>
     </div>
-  </div>
   </header>
   <!-- main -->
   <div class="bg"></div>
   <div class="material-icons" id="closeBtn" onclick="closeExplain()">close</div>
   <div class="wrap">
     <div class="explain_closet">
-      
       <div class="ther_explain">온도를 설정 후 추천을 눌러보세요!<br>온도에 맞는 옷을 추천해드려요.</div>
       <div class="recommend_explain">버튼을 누르면 오늘 날씨에 <br>맞는 옷을 추천해드려요 </div>
       <div class="newcloth_explain">새 옷을 옷장에 등록해 보세요!</div>
     </div>
 
     <section class="info">
-    <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
-    <div class="desc">
-      <span>서울시의 날씨는 10도 흐림(이모지)<br>오늘의 날씨에 맞는 옷을 추천해 드릴까요?</span>
-      <button class="recommend">추천하기</button>   
-    </div>
-  </section> 
+      <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
+      <div class="desc">
+        <span>서울시의 날씨는 10도 흐림(이모지)<br>오늘의 날씨에 맞는 옷을 추천해 드릴까요?</span>
+        <button class="recommend">추천하기</button>
+      </div>
+    </section>
     <section class="content">
       <div class="left-wrap">
         <div class="rangeslider">
           <div class="sliderbg"></div>
-          <input type="text" class="temp_val" value="">  
-        <input type="range" class="temp_range" value="0" min="-20" max="40">
-        <button class="confirm_temp">추천!</button>
+          <input type="text" class="temp_val" value="">
+          <input type="range" class="temp_range" value="0" min="-20" max="40">
+          <button class="confirm_temp">추천!</button>
         </div>
         <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
 
       </div>
+      <div class="changeview">
+        <button class="material-icons" id="listview">view_list</button>
+        <button class="material-icons" id="bigview">view_stream</button>
+      </div>
       <div class="main-wrap">
-      <div class="card list">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="card big">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="card big">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="card big">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="card big">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="card big">
-        <img class="img"src="" alt="">
-        <div class="titletags">
-        <span class="cardtitle">여기에 제목이 들어가요!</span>
-        <div class="tagsgroup">
-          <button>#여름</button>
-          <button>#아우터</button>
-          <button>#빨강</button>
-          <button>#얇음</button>
-         </div>
-       </div>
-      </div>
-      <div class="right-wrap">
-        <div class="qmark" onclick="openExplain()">?</div>
-        <span class="material-icons" roll="button" id="upload_btn" >add_circle</span>
-  
-      </div>
+        <div class="card list">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+          </div>
+        </div>
+        <div class="card big">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+          </div>
+        </div>
+        <div class="nothing">
+          <div class="material-icons">checkroom</div>
+          <p class="empty">옷장이 텅 비었어요!<br>( ˃̣̣̥᷄⌓˂̣̣̥᷅ )</p>
+        </div>
+        <div class="right-wrap">
+          <div class="qmark" onclick="openExplain()">?</div>
+          <span class="material-icons" roll="button" id="upload_btn">add_circle</span>
+
+        </div>
     </section>
   </div>
-  </body>
+</body>
 
-  </html>
+</html>

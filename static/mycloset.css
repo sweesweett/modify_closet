@@ -7,7 +7,6 @@
   height:calc(100% - 50px);
   background-color: rgba(0,0,0,.5);
   z-index: 11;
-  overflow-y: hidden;
   display: none;
 } 
 #closeBtn{
@@ -24,10 +23,10 @@
   margin-top:80px;
   margin: 0 auto;
   max-width:1100px;
-  height:calc(100vh - 50px);
+  min-height:calc(100vh - 100px);
   position:relative;
 }
-/* expain */
+/* expain closet*/
 /* 모달 배경은 우선 만들어두기. 내일 순서 맞춰서 지금까지 한거 css 변경 필요함 */
 .wrap .explain_closet{
   position:absolute;
@@ -203,7 +202,6 @@ color:var(--light-purple);
   background-color: var(--light-purple);
   padding:3px 5px;
   color:var(--white);
- 
 }
 .wrap .content .left-wrap .material-icons{
   padding:5px;
@@ -220,8 +218,20 @@ color:var(--light-purple);
 }
 
 
-/* closet */
 
+/* closet */
+/* changeview */
+.wrap .content .changeview{
+  width:95%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.wrap .content .changeview #list_view{
+  font-size:30px;
+  padding:0;
+  border:none;
+}
 /* liststyle */
 .wrap .content .main-wrap{
   padding: 0 10px; 
@@ -278,6 +288,7 @@ color:var(--light-purple);
 .wrap .content .main-wrap .big{
   margin: 10px auto;
   border-bottom: 1px solid var(--light-gray);
+  display: none;
 }
 .wrap .content .main-wrap .big .img{
   width: 280px;
@@ -293,6 +304,28 @@ color:var(--light-purple);
 }
 .wrap .content .main-wrap .list .titletags .tagsgroup{
   
+}
+.wrap .content .main-wrap .nothing{
+  height:calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .content .main-wrap .nothing .material-icons{
+  font-size: 80px;
+  opacity: 0.3;
+  width:80px;
+  height:80px;
+
+}
+.wrap .content .main-wrap .nothing .empty{
+  opacity: 0.3;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  margin:0;
+
 }
 .wrap .content .right-wrap .qmark{
   background-color: var(--white);
@@ -317,4 +350,7 @@ color:var(--light-purple);
   right:0;
   color:var(--purple);
   cursor:pointer;
+}
+footer{
+  height:30px;
 }
