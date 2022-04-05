@@ -1,3 +1,5 @@
+ /* ?버튼을 눌렀을 시 일제히 버튼들이 올라가는 오류 발생 */
+
 .bg{
   content: '';
   position:fixed;
@@ -225,12 +227,13 @@ color:var(--light-purple);
   width:95%;
   display: flex;
   justify-content: flex-end;
-
 }
-.wrap .content .changeview #list_view{
+.wrap .content .changeview button{
   font-size:30px;
-  padding:0;
   border:none;
+  color:var(--black);
+  background-color: transparent;
+  cursor:pointer;
 }
 /* liststyle */
 .wrap .content .main-wrap{
@@ -240,7 +243,7 @@ color:var(--light-purple);
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--light-gray);
-  display: none;
+  padding:5px;
 }
 .wrap .content .main-wrap .list .img{
   width:75px;
@@ -288,7 +291,6 @@ color:var(--light-purple);
 .wrap .content .main-wrap .big{
   margin: 10px auto;
   border-bottom: 1px solid var(--light-gray);
-  display: none;
 }
 .wrap .content .main-wrap .big .img{
   width: 280px;
@@ -311,6 +313,7 @@ color:var(--light-purple);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 .wrap .content .main-wrap .nothing .material-icons{
   font-size: 80px;

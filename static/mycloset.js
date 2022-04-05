@@ -2,6 +2,7 @@ const temperature = document.querySelector('.temp_val')
 const tempRange = document.querySelector(".temp_range");
 const visibleBtn =document.querySelector('.rangeslider')
 const therBtn = document.getElementById('therBtn')
+const cards=document.querySelectorAll('.card')
 let btnOpen = false
 let explainOpen =false;
 
@@ -42,3 +43,15 @@ function closeExplain(){
   explainOpen=!explainOpen
 
 }
+document.getElementById('listview').addEventListener('click',()=>
+  cards.forEach((card)=>{
+    card.classList.remove('big')
+    card.classList.add('list')
+  })
+)
+document.getElementById('bigview').addEventListener('click',()=>
+  cards.forEach((card)=>{
+    card.classList.remove('list')
+    card.classList.add('big')
+  })
+)
