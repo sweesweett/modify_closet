@@ -29,7 +29,6 @@ function therBtnOpen(){
 
 }
 function openExplain(){
-    document.querySelector('.wrap').style.overflow='hidden'
     document.querySelector('.bg').style.display='block'
     document.querySelector('#closeBtn').style.display='block'
     document.querySelector('.explain_closet').style.display='block'

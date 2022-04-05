@@ -61,9 +61,13 @@ button{
 
 .header{
   margin:0 auto;
+  width:100vw;
   height:50px;
   background-color: var(--light-purple);
   z-index: 15;
+  position:fixed;
+  top:0;
+  left:0;
  
 }
 .header .inner {
