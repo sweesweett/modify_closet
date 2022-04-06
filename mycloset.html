@@ -55,7 +55,19 @@
       <div class="recommend_explain">버튼을 누르면 오늘 날씨에 <br>맞는 옷을 추천해드려요 </div>
       <div class="newcloth_explain">새 옷을 옷장에 등록해 보세요!</div>
     </div>
+    <div class="btns">
 
+      <div class="rangeslider">
+        <div class="sliderbg"></div>
+        <input type="text" class="temp_val" value="">
+        <input type="range" class="temp_range" value="0" min="-20" max="40">
+        <button class="confirm_temp">추천!</button>
+        
+      </div>
+      <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
+      <div class="qmark" onclick="openExplain()">?</div>
+        <span class="material-icons" roll="button" id="upload_btn">add</span>
+    </div>
     <section class="info">
       <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
       <div class="desc">
@@ -64,16 +76,6 @@
       </div>
     </section>
     <section class="content">
-      <div class="left-wrap">
-        <div class="rangeslider">
-          <div class="sliderbg"></div>
-          <input type="text" class="temp_val" value="">
-          <input type="range" class="temp_range" value="0" min="-20" max="40">
-          <button class="confirm_temp">추천!</button>
-        </div>
-        <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
-
-      </div>
       <div class="changeview">
         <button class="material-icons" id="listview">view_list</button>
         <button class="material-icons" id="bigview">view_stream</button>
@@ -130,11 +132,6 @@
         <div class="nothing">
           <div class="material-icons">checkroom</div>
           <p class="empty">옷장이 텅 비었어요!<br>( ˃̣̣̥᷄⌓˂̣̣̥᷅ )</p>
-        </div>
-        <div class="right-wrap">
-          <div class="qmark" onclick="openExplain()">?</div>
-          <span class="material-icons" roll="button" id="upload_btn">add_circle</span>
-
         </div>
     </section>
   </div>

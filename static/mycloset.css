@@ -18,15 +18,15 @@
   color:var(--white);
   z-index:13;
   display: none;
-  padding:10px;
+  padding:5px;
   cursor:pointer;
 }
 .wrap{
   margin-top:80px;
   margin: 0 auto;
   max-width:1100px;
-  min-height:calc(100vh - 100px);
-  position:relative;
+  min-height:calc(100vh - 220px);
+  /* position:relative; */
 }
 /* expain closet*/
 /* 모달 배경은 우선 만들어두기. 내일 순서 맞춰서 지금까지 한거 css 변경 필요함 */
@@ -165,57 +165,68 @@ color:var(--light-purple);
   z-index: -1;
 }
 
-/* left buttons */
-.wrap .content .left-wrap .rangeslider{
+/*buttons*/
+.wrap .btns .rangeslider{
   display: flex;
   flex-direction: column;
   align-items: center;
-  position:absolute;
-  top:35vh;
-  left: -40px;
+  position:fixed;
+  bottom:52vh;
   z-index: 5;
   display: none;
+  margin-left: 10px;
 
 }
-.wrap .content .left-wrap .rangeslider .sliderbg{
+.wrap .btns .rangeslider .sliderbg{
   content:'';
   position:absolute;
-  background-color:var(--purple-btn-border);
+  background-color:var(--light-gray);
   width: 45px;
-  height: 210px;
+  height: 200px;
   top:-100px;
+  left:0;
   border-radius: 12px;
 }
-.wrap .content .left-wrap .rangeslider input[type="range"]{
+.wrap .btns .rangeslider input[type="range"]{
   transform: rotate(270deg);
   background-color: white;
   color:var(--light-purple);
   cursor: pointer;
+  width:100px;
+  position: absolute;
+  left: -30px;
 }
-.wrap .content .left-wrap .rangeslider .temp_val{
+.wrap .btns .rangeslider .temp_val{
   width:30px;
   border: 1px solid var(--light-purple) ;
   border-radius: 5px;
   text-align: center;
   position: absolute;
   top:-90px;
+  left:5px;
   color:var(--purple-emp);
   font-weight: 700;
 }
-.wrap .content .left-wrap .rangeslider .confirm_temp{
+.wrap .btns .rangeslider .confirm_temp{
   position: absolute;
-  top:80px;
-  border:none;
-  border-radius: 5px;
-  background-color: var(--light-purple);
-  padding:3px 5px;
-  color:var(--white);
-}
-.wrap .content .left-wrap .material-icons{
-  padding:5px;
-  position:absolute;
-  top:53vh;
+  top:70px;
   left:5px;
+  border:none;
+  border-radius: 12px;
+  background-color: var(--light-purple);
+  padding:3px 3px;
+  color:var(--white);
+  cursor: pointer;
+  width:35px;
+}
+.wrap .btns .rangeslider .confirm_temp:active{
+  background-color:var(--purple);
+}
+.wrap .btns #therBtn{
+  margin-left: 10px;
+  padding:5px;
+  position:fixed;
+  bottom:30vh;
   border-radius: 50%;
   font-size: 30px;
   background-color: var(--purple);
@@ -223,8 +234,33 @@ color:var(--light-purple);
   font-weight: 400;
   z-index: 5;
   cursor:pointer;
+  box-shadow: 2px 2px 2px var(--gray);
 }
-
+/* .wrap .btns .qmark{
+  background-color: var(--white);
+  border:2px solid black;
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+  top:136px;
+  right:10px;
+  font-size: 18px;
+  padding:2px;
+}*/
+.wrap .btns #upload_btn{
+  font-size: 40px;
+  border-radius: 50%;
+  position:fixed;
+  bottom:4vh;
+  right:3vw;
+  background-color:var(--purple);
+  color:var(--white);
+  cursor:pointer;
+  box-shadow: 2px 2px 2px var(--gray);
+}
 
 
 /* closet */
@@ -244,7 +280,7 @@ color:var(--light-purple);
   border-bottom: 1px solid var(--light-gray);
 }
 .wrap .content .changeview button{
-  font-size:21px;
+  font-size:24px;
   border:none;
   color:var(--black);
   background-color: transparent;
@@ -253,7 +289,7 @@ color:var(--light-purple);
 /* liststyle */
 .wrap .content .main-wrap{
   padding: 0 10px; 
-  margin-top:210px;
+  margin-top:215px;
 }
 .wrap .content .main-wrap .list{
   display: flex;
@@ -347,30 +383,7 @@ color:var(--light-purple);
   margin:0;
 
 }
-.wrap .content .right-wrap .qmark{
-  background-color: var(--white);
-  border:2px solid black;
-  width:20px;
-  height:20px;
-  border-radius: 50%;
-  text-align: center;
-  position: absolute;
-  cursor: pointer;
-  top:136px;
-  right:10px;
-  font-size: 18px;
-  padding:2px;
 
-  
-}
-.wrap .content .right-wrap #upload_btn{
-  font-size: 60px;
-  position:absolute;
-  bottom:7vh;
-  right:0;
-  color:var(--purple);
-  cursor:pointer;
-}
 footer{
   height:30px;
 }
