@@ -49,25 +49,27 @@
   <!-- main -->
   <div class="bg"></div>
   <div class="material-icons" id="closeBtn" onclick="closeExplain()">close</div>
-  <div class="wrap">
+  <div class="wrap"> 
+    <!-- 버튼들을 설명하는 말풍선 물음표버튼으로 활성화 -->
     <div class="explain_closet">
       <div class="ther_explain">온도를 설정 후 추천을 눌러보세요!<br>온도에 맞는 옷을 추천해드려요.</div>
       <div class="recommend_explain">버튼을 누르면 오늘 날씨에 <br>맞는 옷을 추천해드려요 </div>
       <div class="newcloth_explain">새 옷을 옷장에 등록해 보세요!</div>
     </div>
+    <!-- 떠있는 버튼들 -->
     <div class="btns">
-
       <div class="rangeslider">
         <div class="sliderbg"></div>
         <input type="text" class="temp_val" value="">
         <input type="range" class="temp_range" value="0" min="-20" max="40">
         <button class="confirm_temp">추천!</button>
-        
       </div>
       <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
       <div class="qmark" onclick="openExplain()">?</div>
         <span class="material-icons" roll="button" id="upload_btn">add</span>
     </div>
+
+    <!-- info 상단에 날씨설명+ 추천하기 버튼 -->
     <section class="info">
       <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
       <div class="desc">
@@ -75,12 +77,15 @@
         <button class="recommend">추천하기</button>
       </div>
     </section>
+    <!-- content -->
     <section class="content">
+      <!-- 목록형 사진형 전환버튼 -->
       <div class="changeview">
         <button class="material-icons" id="listview">view_list</button>
         <button class="material-icons" id="bigview">view_stream</button>
       </div>
       <div class="main-wrap">
+        <div class="cardgroup">
         <div class="card big">
           <img class="img" src="" alt="">
           <div class="titletags">
@@ -128,6 +133,55 @@
               <button>#얇음</button>
             </div>
           </div>
+        </div>
+        <div class="card big">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+          </div>
+        </div>
+        <div class="card big">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+          </div>
+        </div>
+        <div class="card big">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+          </div>
+        </div>
+        <div class="card big">
+          <img class="img" src="" alt="">
+          <div class="titletags">
+            <span class="cardtitle">여기에 제목이 들어가요!</span>
+            <div class="tagsgroup">
+              <button>#여름</button>
+              <button>#아우터</button>
+              <button>#빨강</button>
+              <button>#얇음</button>
+            </div>
+        </div>
+      </div>
         </div>
         <div class="nothing">
           <div class="material-icons">checkroom</div>

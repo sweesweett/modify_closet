@@ -29,13 +29,14 @@ function therBtnOpen(){
 
 }
 function openExplain(){
+    document.querySelector('body').style.overflow='hidden'
     document.querySelector('.bg').style.display='block'
     document.querySelector('#closeBtn').style.display='block'
     document.querySelector('.explain_closet').style.display='block'
     explainOpen=!explainOpen
 }
 function closeExplain(){
-  console.log('test')
+  document.querySelector('body').style.overflow='auto'
   document.querySelector('.bg').style.display='none'
   document.querySelector('#closeBtn').style.display='none'
   document.querySelector('.explain_closet').style.display='none'
@@ -54,3 +55,6 @@ document.getElementById('bigview').addEventListener('click',()=>
     card.classList.add('big')
   })
 )
+
+// let a= document.querySelector('.wrap').clientWidth
+// console.log(a)
