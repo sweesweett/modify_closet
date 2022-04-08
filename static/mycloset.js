@@ -5,6 +5,7 @@ const therBtn = document.getElementById('therBtn')
 const cards=document.querySelectorAll('.card')
 let btnOpen = false
 let explainOpen =false;
+let newClothOpen =false;
 
 tempRange.oninput = rangeInput;
 temperature.oninput =tempInput;
@@ -35,13 +36,18 @@ function openExplain(){
     document.querySelector('.explain_closet').style.display='block'
     explainOpen=!explainOpen
 }
-function closeExplain(){
+function closeBtn(){
+  if(explainOpen===true){
   document.querySelector('body').style.overflow='auto'
   document.querySelector('.bg').style.display='none'
   document.querySelector('#closeBtn').style.display='none'
   document.querySelector('.explain_closet').style.display='none'
   explainOpen=!explainOpen
+  }
+  else if(newClothOpen ===true){
+    console.log('beep')
 
+  }
 }
 document.getElementById('listview').addEventListener('click',()=>
   cards.forEach((card)=>{

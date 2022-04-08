@@ -48,7 +48,12 @@
   </header>
   <!-- main -->
   <div class="bg"></div>
-  <div class="material-icons" id="closeBtn" onclick="closeExplain()">close</div>
+  <div class="material-icons" id="closeBtn" onclick="closeBtn()">close</div>
+  <div class="newcloth">
+    <form method="post" enctype="multipart/form-data">
+      <input type="file">
+    </form>
+  </div>
   <div class="wrap"> 
     <!-- 버튼들을 설명하는 말풍선 물음표버튼으로 활성화 -->
     <div class="explain_closet">
@@ -66,8 +71,10 @@
       </div>
       <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
       <div class="qmark" onclick="openExplain()">?</div>
-        <span class="material-icons" roll="button" id="upload_btn">add</span>
-    </div>
+      <span class="material-icons" roll="button" id="upload_btn">add</span>
+      <!-- <div class="upBtn">화살표</div> -->
+    
+      </div>
 
     <!-- info 상단에 날씨설명+ 추천하기 버튼 -->
     <section class="info">
@@ -85,8 +92,12 @@
         <button class="material-icons" id="bigview">view_stream</button>
       </div>
       <div class="main-wrap">
-        <div class="cardgroup">
         <div class="card big">
+          <!-- 수정해야함 -->
+          <div class="changestatus">
+            <button class="modify Btn">수정</button>
+            <button class="delete Btn">삭제</button> 
+          </div>
           <img class="img" src="" alt="">
           <div class="titletags">
             <span class="cardtitle">여기에 제목이 들어가요!</span>
@@ -182,7 +193,6 @@
             </div>
         </div>
       </div>
-        </div>
         <div class="nothing">
           <div class="material-icons">checkroom</div>
           <p class="empty">옷장이 텅 비었어요!<br>( ˃̣̣̥᷄⌓˂̣̣̥᷅ )</p>
