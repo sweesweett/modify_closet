@@ -50,9 +50,36 @@
   <div class="bg"></div>
   <div class="material-icons" id="closeBtn" onclick="closeBtn()">close</div>
   <div class="newcloth">
+    
     <form method="post" enctype="multipart/form-data">
-      <input type="file">
+      <label for="picture Choose">업로드</label>
+        <input type="file"> 
+      
+      <label for="title">제목</label>
+        <input type="text"> 
+        봄<input type="radio" value="spring" name="season">
+        여름<input type="radio" value="summer" name="season">
+        가을<input type="radio" value="fall" name="season">
+        겨울<input type="radio" value="winter" name="season">
+        종류
+      <select name="kind" id="" >
+        <!-- https://developer.mozilla.org/ko/docs/Web/HTML/Element/select -->
+        <option value="">겉옷</option>
+        <option value="">상의</option>
+        <option value="">하의</option>
+        <option value="">일체형</option>
+      </select>
+      <select name="kindDetail" id="">
+        <option value="">여기 js</option>
+      </select>
+      색상 <select name="color" id="">
+        <option value="">빨강</option>
+      </select><select name="pattern" id="">
+        <option value="">줄무늬</option>
+      </select>
     </form>
+    <img src="" alt="" style="width:300px; height:300px;">
+    <button>등록하기</button>
   </div>
   <div class="wrap"> 
     <!-- 버튼들을 설명하는 말풍선 물음표버튼으로 활성화 -->
@@ -71,7 +98,7 @@
       </div>
       <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
       <div class="qmark" onclick="openExplain()">?</div>
-      <span class="material-icons" roll="button" id="upload_btn">add</span>
+      <span class="material-icons" roll="button" id="upload_btn" onclick="uploadClothBtn()">add</span>
       <!-- <div class="upBtn">화살표</div> -->
     
       </div>
