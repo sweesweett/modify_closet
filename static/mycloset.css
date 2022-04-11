@@ -30,8 +30,19 @@
   height:600px;
   background-color: aqua;
   z-index: 12;
-  display: none;
+  display:none;
   
+}
+.newcloth form{
+  display:flex;
+  flex-direction: column;
+  padding:10px;
+  margin:auto;
+}
+.newcloth form input,
+.newcloth form select{
+  border-radius: 10px;
+  padding:5px;
 }
 .wrap{
   margin-top:80px;
@@ -211,6 +222,7 @@ color:var(--light-purple);
   color:var(--white);
   cursor:pointer;
   box-shadow: 2px 2px 2px var(--gray);
+  z-index: 5;
 }
 
 
