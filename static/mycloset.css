@@ -39,11 +39,20 @@
   padding:10px;
   margin:auto;
 }
-.newcloth form input,
-.newcloth form select{
+.newcloth form input{
   border-radius: 10px;
   padding:5px;
 }
+.newcloth form select{
+  border-radius: 10px 10px 0 0;
+  padding:5px;
+  margin:5px;
+}
+
+
+
+
+
 .wrap{
   margin-top:80px;
   margin: 0 auto 50px;
