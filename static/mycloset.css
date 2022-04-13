@@ -26,30 +26,57 @@
   top:80px;
   left:50%;
   transform: translateX(-50%);
-  width:80%;
-  height:600px;
-  background-color: aqua;
+  width:90%;
+  max-width:1000px;
+  background: linear-gradient(180deg,#f6edff 0%, #e3d4f8 100%);
   z-index: 12;
-  display:none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--gray);
+  display: none;
   
+}
+.newcloth .title{
+  margin:10px;
+  font-size: var(--font-large);
+  text-align: center;
+}
+.newcloth .modalContent{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap:wrap;
 }
 .newcloth form{
   display:flex;
   flex-direction: column;
   padding:10px;
-  margin:auto;
+}
+.newcloth label{
+  font-weight: 700;
+}
+.newcloth legend{
+  font-weight: 700;
 }
 .newcloth form input{
   border-radius: 10px;
   padding:5px;
+  margin:5px;
+  outline: none;
 }
 .newcloth form select{
-  border-radius: 10px 10px 0 0;
-  padding:5px;
+  border-radius: 10px 10px 10px 0;
+  padding:10px 0;
   margin:5px;
+  background: none;
+  border: 1px solid var(--gray);
 }
 
-
+.newcloth button{
+  position:absolute;
+  bottom:5vh;
+  left:50%;
+  transform: translateX(-50%);
+}
 
 
 

@@ -6,6 +6,8 @@ const cards=document.querySelectorAll('.card');
 let btnOpen = false;
 let explainOpen =false;
 let newClothOpen =false;
+const imgFile = document.getElementById('imgfile')
+
 const clothKind =document.getElementById('clothKind')
 const clothdetail = document.getElementById('kindDetail')
 
@@ -66,17 +68,38 @@ function closeBtn(){
   document.querySelector('.newcloth').style.display='none'
   newClothOpen=!newClothOpen
   location.reload()
-
   }
 }
-
+// 새 옷 등록
 function uploadClothBtn(){
   document.querySelector('body').style.overflow='hidden';
+  document.querySelector('.modalContent').overflow='scroll'
   document.querySelector('.bg').style.display='block';
   document.querySelector('#closeBtn').style.display='block';
   document.querySelector('.newcloth').style.display='block';
   newClothOpen=!newClothOpen
 }
+
+// mdn에서 따오긴 했지만, 수정해야함!
+function previewFile() {
+  const preview = document.querySelector('#imgPreview');
+  let file    = document.querySelector('input[type=file]').files[0];
+  console.log(file)
+  let reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+
+
+
+
 
 clothKind.addEventListener('change',()=>{ 
   switch(clothKind.value){
