@@ -7,11 +7,10 @@ let btnOpen = false;
 let explainOpen =false;
 let newClothOpen =false;
 const imgFile = document.getElementById('imgfile')
-
 const clothKind =document.getElementById('clothKind')
-const clothdetail = document.getElementById('kindDetail')
+const clothDetail = document.getElementById('kindDetail')
 
-
+// 수정필요1
 tempRange.oninput = rangeInput;
 temperature.oninput =tempInput;
 
@@ -21,6 +20,8 @@ function rangeInput(e) {
 function tempInput(e) {
   tempRange.value = e.target.value;
 }
+
+
 
 function therBtnOpen(){
   if(btnOpen===false){
@@ -46,6 +47,7 @@ document.querySelector('#bigview').addEventListener('click',()=>
   })
 )
 
+// 옷장설명 오픈
 function openExplain(){
     document.querySelector('body').style.overflow='hidden';
     document.querySelector('.bg').style.display='block';
@@ -53,15 +55,16 @@ function openExplain(){
     document.querySelector('.explain_closet').style.display='block';
     explainOpen=!explainOpen;
 }
+
 function closeBtn(){
-  if(explainOpen=== true){
+  if(explainOpen=== true){ //옷장 설명 닫기
   document.querySelector('body').style.overflow='auto';
   document.querySelector('.bg').style.display='none';
   document.querySelector('#closeBtn').style.display='none';
   document.querySelector('.explain_closet').style.display='none';
   explainOpen=!explainOpen
   }
-  else if(newClothOpen === true){
+  else if(newClothOpen === true){ //새 옷장 닫기
   document.querySelector('body').style.overflow='auto';
   document.querySelector('.bg').style.display='none';
   document.querySelector('#closeBtn').style.display='none';
@@ -70,7 +73,7 @@ function closeBtn(){
   location.reload()
   }
 }
-// 새 옷 등록
+// 새 옷 등록 띄우기
 function uploadClothBtn(){
   document.querySelector('body').style.overflow='hidden';
   document.querySelector('.modalContent').overflow='scroll'
@@ -84,7 +87,7 @@ function uploadClothBtn(){
 function previewFile() {
   const preview = document.querySelector('#imgPreview');
   let file    = document.querySelector('input[type=file]').files[0];
-  console.log(file)
+  // console.log(file)
   let reader  = new FileReader();
 
   reader.addEventListener("load", function () {
@@ -97,14 +100,39 @@ function previewFile() {
 }
 
 
+//옷 등록 버튼 눌렀을 때 로그 잘찍히나 확인 
+function test(){
+  const clothTitle = document.getElementById('clothTitle')
+  const thickness = document.getElementById('thickness')
+  const color = document.getElementById('clothColor')
+  const pattern =document.getElementById('clothPattern')
+
+
+  if (clothTitle.value !==''&& thickness.value!=='' && color.value !=='' && pattern.value !==''&&imgFile.value !==''&& clothDetail!=='' && clothKind!==''){
+    alert('yes')
+
+  }else{
+    alert('제대로 입력해 주세요')
+  }
+  const value ={
+    img:imgFile.value,
+    title:clothTitle.value,
+    cloth:clothKind.value,
+    clothdetail:clothDetail.value,
+    thickness:thickness.value,
+    color: color.value,
+    pattern:pattern.value
+  }
+console.log(value)
+}
 
 
 
-
+//옷장등록시 종류별 세부 종류 띄우기 
 clothKind.addEventListener('change',()=>{ 
   switch(clothKind.value){
   case 'outer':
-    clothdetail.innerHTML=
+    clothDetail.innerHTML=
     `<option value="coat">코트</option>
     <option value="jacket">자켓</option>
     <option value="parka">패딩</option>
@@ -113,7 +141,7 @@ clothKind.addEventListener('change',()=>{
     <option value="etc">그 외</option>`
     break
   case 'top':
-    clothdetail.innerHTML=
+    clothDetail.innerHTML=
     `<option value="tshirt">반팔티</option>
     <option value="sleeveless">민소매</option>
     <option value="sweatshirt">맨투맨</option>
@@ -125,7 +153,7 @@ clothKind.addEventListener('change',()=>{
     <option value="vest">조끼</option>`
     break
   case 'bottom':
-    clothdetail.innerHTML=
+    clothDetail.innerHTML=
     `<option value="pants">팬츠</option>
     <option value="slack">슬랙스</option>
     <option value="shorts">반바지</option>
@@ -134,7 +162,7 @@ clothKind.addEventListener('change',()=>{
     <option value="etc">그 외</option>`
     break
   case 'set':
-    clothdetail.innerHTML=
+    clothDetail.innerHTML=
     `<option value="jumpsuit">점프수트</option>
     <option value="dress">원피스</option>
     <option value="suit">수트</option>
@@ -142,7 +170,7 @@ clothKind.addEventListener('change',()=>{
     <option value="etc">그 외</option>`
     break
   default:
-    clothdetail.innerHTML=`<option value="notchoose">선택하세요</option>`
+    clothDetail.innerHTML=`<option value="notchoose">선택하세요</option>`
 }})
 
 

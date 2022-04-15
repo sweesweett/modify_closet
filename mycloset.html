@@ -53,45 +53,50 @@
   <div class="newcloth">
     <h2 class="modal title">새 옷 등록하기</h2>
     <div class="modalContent">
-      <img src="./static/img/KakaoTalk_20220413_212147773.jpg" alt="upload image preview" id="imgPreview" style="width:200px; height:200px;">  
-    <form method="get" enctype="multipart/form-data" id="newcloth">
-    <label for ='imgfile'>업로드</label>
+      <img src="./static/img/newclothalt.jpg" alt="upload image preview" id="imgPreview" style="width:200px; height:200px;">  
+    <form method="post" enctype="multipart/form-data" id="newcloth">
+    <label>업로드
       <input type="file" accept="image/*" id="imgfile" onchange="previewFile()">
-    <label for='clothTitle'>제목</label>
-    <input type="text" id="clothTitle">
- 
-    <fieldset>
-      <legend>계절</legend>
-      <label><input type="radio" value="spring" name="season">봄</label>
-      <label><input type="radio" value="summer" name="season">여름</label>
-      <label><input type="radio" value="fall" name="season">가을</label>
-      <label><input type="radio" value="winter" name="season">겨울</label>
-    </fieldset>
-    <label>종류
+    </label>  
+    <label>제목
+    <input type="text" id="clothTitle" autocomplete="off" placeholder="제목을 입력해 주세요">
+  </label>  
+    <label>
+        계절
+      <select name="season" id="clothSeason">
+      <option value="">-선택하세요-</option>
+      <option value="spring" >봄</option>
+      <option value="summer" >여름</option>
+      <option value="fall" >가을</option>
+      <option value="winter" >겨울</option>
+      </select>
+    </label>
+    <label>
+    종류
     <select name="kind" id="clothKind" >
-      <option value="">선택하세요</option>
+      <option value="">-선택하세요-</option>
       <option value="outer">겉옷</option>
       <option value="top">상의</option>
       <option value="bottom">하의</option>
       <option value="set">일체형,세트</option>
     </select>
     <select name="kindDetail" id="kindDetail">
-      <option value="">선택하세요</option>
+      <option value="">-선택하세요-</option>
     </select>
   </label>
   <label>
     두께
     <select name="thickness" id="thickness">
+      <option value="">-선택하세요-</option>
       <option value="thin">얇음</option>
       <option value="soso">보통</option>
       <option value="thick">두꺼움</option>
     </select>
   </label>
-  <label for ="clothColor"> 색상 (컬러피커로 선택해보세요)</label>
-    <input type="color" id="clothColor"> 
   <label>
     패턴
     <select name="pattern" id="clothPattern">
+      <option value="">-선택하세요-</option>
       <option value="none">없음</option>
       <option value="stripe">줄무늬</option>
       <option value="dotted">땡땡이</option>
@@ -100,8 +105,28 @@
       <option value="etc">그 외</option>
     </select>
   </label> 
+  <label> 색상
+      <select id="clothColor">
+        <option value="">-선택하세요-</option>
+        <option value="red">빨강색</option>
+        <option value="yellow">노랑색</option>
+        <option value="orange">주황색</option>
+        <option value="yellow-green">연두색</option>
+        <option value="green">초록색</option>
+        <option value="skyblue">하늘색</option>
+        <option value="blue">파랑색</option>
+        <option value="blue-green">청록색</option>
+        <option value="brown">갈색</option>
+        <option value="navy">남색</option>
+        <option value="violet">보라색</option>
+        <option value="pink">분홍색</option>
+        <option value="white">흰색</option>
+        <option value="gray">회색</option>
+        <option value="black">검은색</option>
+      </select> 
+  </label>
     </form>
-      <button form="newcloth">등록하기</button>
+      <button class="material-icons" onclick="test()">done</button>
   </div>
 </div>
 

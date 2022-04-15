@@ -25,6 +25,7 @@
   position:fixed;
   top:80px;
   left:50%;
+  padding: 15px 0;
   transform: translateX(-50%);
   width:90%;
   max-width:1000px;
@@ -36,46 +37,62 @@
   
 }
 .newcloth .title{
-  margin:10px;
   font-size: var(--font-large);
   text-align: center;
+  margin:10px;
 }
 .newcloth .modalContent{
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   flex-wrap:wrap;
 }
-.newcloth form{
+.newcloth .modalContent form{
   display:flex;
   flex-direction: column;
   padding:10px;
+  width:90%;
+ box-sizing: border-box;
 }
-.newcloth label{
+
+.newcloth .modalContent form label{
   font-weight: 700;
-}
-.newcloth legend{
-  font-weight: 700;
-}
-.newcloth form input{
+}  
+.newcloth .modalContent form input{
   border-radius: 10px;
   padding:5px;
   margin:5px;
   outline: none;
+  border: none;
+  
+}
+.newcloth form input[type="text"]{
+  width:70%;
 }
 .newcloth form select{
   border-radius: 10px 10px 10px 0;
-  padding:10px 0;
+  padding:5px 0;
   margin:5px;
   background: none;
+  outline: none;
   border: 1px solid var(--gray);
 }
 
 .newcloth button{
   position:absolute;
-  bottom:5vh;
-  left:50%;
-  transform: translateX(-50%);
+  right:3vw;
+  bottom:3vh;
+  border-radius: 50%;
+  padding:5px;
+  font-weight: 700;
+  color:var(--white);
+  background-color: var(--purple);
+  border:none;
+  box-shadow: 2px 2px 2px var(--gray);
+}
+.newcloth button:active{
+  background-color: var(--purple-emp);
 }
 
 
