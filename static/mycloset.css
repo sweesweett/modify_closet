@@ -265,12 +265,32 @@ color:var(--light-purple);
   padding:2px;
   z-index: 10;
 }
+.wrap .btns #upBtn{
+  display: none;
+  font-size: 32px;
+  text-align: center;
+  width:40px;
+  height:40px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom:12vh;
+  right:5vw;
+  background-color: var(--background);
+  z-index: 5;
+  border:3px solid var(--purple);
+  border-radius: 50%;
+  color:var(--purple-emp);
+  cursor: pointer;
+  
+}
 .wrap .btns #upload_btn{
+  width:40px;
+  height:40px;
   font-size: 40px;
   border-radius: 50%;
   position:fixed;
-  bottom:4vh;
-  right:3vw;
+  bottom:6vh;
+  right:5vw;
   background-color:var(--purple);
   color:var(--white);
   cursor:pointer;

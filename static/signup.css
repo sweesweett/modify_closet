@@ -1,56 +1,78 @@
 
 .wrap{
-  max-width:1100px;
+  max-width:600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  margin:150px auto 0;
   
 }
 .title{
-  margin:0 auto 30px;
   font-size: 30px;
   font-weight: 700;
   padding:5px;
-  text-align: center;
+  font-family:'Redressed','Nanum Brush Script',cursive;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
-.wrap .container {
+.wrap .auth{
+
   letter-spacing: 2px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
   border-radius: 12px;
+}
+.wrap .auth .btn-wrap{
+  display: flex;
+}
+.wrap .auth .btn-wrap .btn{
+  width: 200px;
+  border:none;
+  border-radius: 12px 12px 0 0;
+  background-color: var(--white);
+}
+
+.wrap .auth .btn-wrap .btn.show{
+  background-color: var(--purple-rgba);
+  color:var(--white);
+
+}
+.wrap .auth .container {
   padding:10px;
   box-sizing: border-box;
+  background-color: var(--purple-rgba);
+  border-radius: 0 0 12px 12px;
 }
-.wrap .container .form{
+.wrap .auth .container .form{
+  display:none;
   width:90%;
   margin:0 auto;
   padding:10px;
-  display: flex;
-  flex-direction: column;
-  color:var(--black);
 
 }
-.wrap  .container .form.show #same,
-.wrap  .container .form.show #already{
+
+.wrap .auth .container .form.show{
+  display: flex;
+  flex-direction: column;
+  color:var(--white);
+}
+.wrap .auth .container .form.show #same,
+.wrap .auth .container .form.show #already{
   font-size: 12px;
   display: block;
   margin-bottom: 5px;
 
 }
 
-.wrap .container input{
+.wrap .auth .container input{
   margin-bottom:10px;
   padding:7px;
-  border:none;
-  border-bottom:2px solid var(--purple-btn-border);
+  border-radius: 5px;
+  border:2px solid var(--purple-btn-border);
   box-sizing: border-box;
-  background-color: var(--background);
 
 }
 .wrap .auth .container .form .valid-email{
@@ -70,8 +92,8 @@
 
 }
 .wrap .submit{
-  display: block;
-  width:90%;
+  display: none;
+  width:350px;
   font-size: var(--font-large);
   font-weight: 700;
   background-color:rgba(145,80,175,.9);
@@ -83,7 +105,7 @@
   border:none;
 }
 .wrap .submit.show{
-
+  display: block;
   color:var(--white);
 }
 .wrap .submit.show:hover{

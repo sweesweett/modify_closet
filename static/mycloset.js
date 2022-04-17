@@ -20,9 +20,22 @@ function rangeInput(e) {
 function tempInput(e) {
   tempRange.value = e.target.value;
 }
+//위로올라가기
+window.addEventListener('scroll',function(){
+  let upBtn = document.querySelector('#upBtn')
+  if(window.scrollY >500){
+    upBtn.style.display='block'
+    upBtn.addEventListener('click',()=>
+      window.scrollTo({top:0,behavior:'smooth'})
 
+    )
 
+  }
+  else {
+    upBtn.style.display='none'
+  }})
 
+//온도계 버튼 오픈했을 때
 function therBtnOpen(){
   if(btnOpen===false){
     visibleBtn.style.display='flex';
@@ -34,6 +47,11 @@ function therBtnOpen(){
     btnOpen=!btnOpen;
   }
 }
+//온도계 추천 버튼 눌렀을 시 통신(?)
+function therRecommand(){
+
+}
+//목록형 사진형 뷰 바꿀 때
 document.querySelector('#listview').addEventListener('click',()=>
   cards.forEach((card)=>{
     card.classList.remove('big');
@@ -102,17 +120,18 @@ function previewFile() {
 
 //옷 등록 버튼 눌렀을 때 로그 잘찍히나 확인 
 function test(){
-  const clothTitle = document.getElementById('clothTitle')
-  const thickness = document.getElementById('thickness')
-  const color = document.getElementById('clothColor')
-  const pattern =document.getElementById('clothPattern')
+  const clothTitle = document.getElementById('clothTitle');
+  const thickness = document.getElementById('thickness');
+  const color = document.getElementById('clothColor');
+  const pattern =document.getElementById('clothPattern');
 
 
   if (clothTitle.value !==''&& thickness.value!=='' && color.value !=='' && pattern.value !==''&&imgFile.value !==''&& clothDetail!=='' && clothKind!==''){
-    alert('yes')
+    alert('yes');
+    //여기에 통신
 
   }else{
-    alert('제대로 입력해 주세요')
+    alert('제대로 입력해 주세요');
   }
   const value ={
     img:imgFile.value,
@@ -122,7 +141,7 @@ function test(){
     thickness:thickness.value,
     color: color.value,
     pattern:pattern.value
-  }
+  };
 console.log(value)
 }
 
