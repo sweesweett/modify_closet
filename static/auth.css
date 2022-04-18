@@ -19,6 +19,7 @@
   text-align: center;
 }
 .wrap .container {
+  margin-bottom: 10px;
   letter-spacing: 2px;
   box-sizing: border-box;
   display: flex;
@@ -27,8 +28,9 @@
   padding:10px;
   box-sizing: border-box;
 }
-.wrap .container .form{
-  width:90%;
+.wrap .container .signin{
+  width:80vw;
+  max-width:600px;
   margin:0 auto;
   padding:10px;
   display: flex;
@@ -36,21 +38,26 @@
   color:var(--black);
 
 }
+.wrap .container .signin label {
+  font-weight: 700;
+  font-size: var(--font-large);
+}
+
+.wrap .container input{
+  margin-bottom:30px;
+  padding:7px;
+  font-size: var(--font-large);
+  border:none;
+  border-bottom:2px solid var(--purple-btn-border);
+  box-sizing: border-box;
+  background-color: var(--background);
+
+}
 .wrap  .container .form.show #same,
 .wrap  .container .form.show #already{
   font-size: 12px;
   display: block;
   margin-bottom: 5px;
-
-}
-
-.wrap .container input{
-  margin-bottom:10px;
-  padding:7px;
-  border:none;
-  border-bottom:2px solid var(--purple-btn-border);
-  box-sizing: border-box;
-  background-color: var(--background);
 
 }
 .wrap .auth .container .form .valid-email{
@@ -70,17 +77,23 @@
 
 }
 .wrap .submit{
+  margin:auto;
+  margin-top:20px;
   display: block;
-  width:90%;
+  width:80vw;
+  max-width:600px;
   font-size: var(--font-large);
   font-weight: 700;
-  background-color:rgba(145,80,175,.9);
+  color:var(--white);
+  background-color:var(--purple);
   border-radius: 10px;
-  padding:10px;
-  margin-top:20px;
+  padding:15px;
   cursor:pointer;
   box-sizing: border-box;
   border:none;
+}
+.wrap .container .submit:active{
+  background-color: var(--purple-emp);
 }
 .wrap .submit.show{
 
