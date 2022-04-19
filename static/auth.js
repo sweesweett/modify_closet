@@ -1,30 +1,9 @@
 // 로그인 회원가입 화면 바꾸기
-const signinBtn = document.querySelector('.signup')
 const signupBtn = document.querySelector('.signin')
 const signinEl = document.querySelector('.container .signin')
 const signupEl = document.querySelector('.container .signup')
 const subSignin = document.querySelector('.wrap .submit-signin')
-const subSignup = document.querySelector('.wrap .submit-signup')
 const snsLogin = document.querySelector('.sns-login')
-signinBtn.addEventListener('click', function () {
-    signinBtn.classList.add('show');
-    snsLogin.classList.remove('show');
-    signinEl.classList.remove('show');
-    signupBtn.classList.remove('show');
-    signupEl.classList.add('show');
-    subSignin.classList.remove('show');
-    subSignup.classList.add('show');
-})
-
-signupBtn.addEventListener('click', function () {
-    signupBtn.classList.add('show')
-    signupEl.classList.remove('show')
-    signinBtn.classList.remove('show')
-    snsLogin.classList.add('show')
-    signinEl.classList.add('show')
-    subSignup.classList.remove('show');
-    subSignin.classList.add('show');
-})
 
 // 회원가입창
 const userid = document.getElementById('signup-id');

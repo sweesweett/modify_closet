@@ -1,4 +1,76 @@
 
+/*비밀번호찾기 모달창*/
+.modal-bg{
+  display: none;
+  position:fixed;
+  content:"";
+  width:100vw;
+  height:calc(100% - 50px);
+  top:50px;
+  left:0;
+  background-color:rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+.modal-wrap{
+  display: none;
+  min-width:280px;
+  width:80vw;
+  max-width: 600px;
+  height:300px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border-radius:12px;
+  background-color:var(--white);
+  z-index: 2;
+
+}
+.modal-wrap .xbtn-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:40px;
+  box-sizing: border-box;
+  background-color:var(--purple);
+  color:#fff;
+  border-radius: 12px 12px 0 0;
+  padding:10px;
+}
+.modal-wrap .xbtn-bar .material-icons{
+  cursor:pointer;
+}
+.modal-wrap .modal-findpw{
+  padding-top:20px;
+  width:90%;
+  display:flex;
+  margin:auto;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.modal-wrap .modal-findpw #findpw-id{
+  margin-right:10px;
+  padding:7px;
+  border-radius: 5px;
+  border:2px solid var(--purple-btn-border);
+  box-sizing: border-box;
+}
+.modal-wrap .modal-findpw #findpw-btn{
+  font-size:var(--font-medium);
+  width:40px;
+  height: 35px;
+  display: inline-block;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px var(--gray);
+}
 .wrap{
   max-width:1100px;
   display: flex;
@@ -131,7 +203,6 @@
 }
 /*비밀번호 찾기 버튼*/
 
-
 .wrap .find-pwd{
   margin-top: 10px;
   padding:10px;
@@ -139,63 +210,3 @@
   cursor:pointer;
 }
 
-
-/*비밀번호찾기 모달창*/
-.modal-bg{
-  display: none;
-  position:fixed;
-  content:"";
-  width:100%;
-  height:calc(100% - 80px);
-  top:70px;
-  left:0;
-  background-color:rgba(0,0,0,.5);
-}
-
-.modal-wrap{
-  display: none;
-  position:absolute;
-  width:400px;
-  height:300px;
-  box-sizing: border-box;
-  top:200px;
-  border-radius:12px;
-  background-color:var(--white);
-
-}
-.modal-wrap .xbtn-bar{
-  width:100%;
-  height:40px;
-  box-sizing: border-box;
-  background-color:var(--purple);
-  color:#fff;
-  border-radius: 12px 12px 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:10px;
-}
-.modal-wrap .xbtn-bar .material-icons{
-  cursor:pointer;
-}
-.modal-wrap .modal-findpw{
-  width:100%;
-  display: flex;
-  justify-content: center;
-
-}
-.modal-wrap .modal-findpw .findpw-form{
-  padding-top:20px;
-}
-
-.modal-wrap .modal-findpw #findpw-id{
-  margin-right:10px;
-  padding:7px;
-  border-radius: 5px;
-  border:2px solid var(--purple-btn-border);
-  box-sizing: border-box;
-}
-.modal-wrap .modal-findpw #findpw-btn{
-  font-size:var(--font-medium);
-  display: inline;
-}
