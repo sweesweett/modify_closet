@@ -116,6 +116,9 @@
 }
 
 .wrap .container input{
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
   margin-bottom:30px;
   padding:7px;
   font-size: var(--font-large);
@@ -123,29 +126,6 @@
   border-bottom:2px solid var(--purple-btn-border);
   box-sizing: border-box;
   background-color: var(--background);
-
-}
-.wrap  .container .form.show #same,
-.wrap  .container .form.show #already{
-  font-size: 12px;
-  display: block;
-  margin-bottom: 5px;
-
-}
-.wrap .auth .container .form .valid-email{
-  display: flex;
-  justify-content: space-between;
-}
-.wrap .auth .container .form .valid-email #signup-email{
-  flex:80%;
-}
-.wrap .auth .container .form .valid-email .valid{
-  height:35px;
-  flex: 20%;
-  margin-left: 5px;
-  font-size:var(--font-medium);
-  padding:2px;
-  border:none;
 
 }
 .wrap .submit{
@@ -167,14 +147,6 @@
 .wrap .container .submit:active{
   background-color: var(--purple-emp);
 }
-.wrap .submit.show{
-
-  color:var(--white);
-}
-.wrap .submit.show:hover{
-  background-color: var(--purple-emp);
-}
-
 
 /*sns 로그인*/
 
