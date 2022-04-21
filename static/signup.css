@@ -38,7 +38,6 @@
 }
 .wrap .container .valid-email{
   display: flex;
-  height:65px;
   align-items: flex-start;
 }
 .wrap .container .valid-email .btn.valid{
@@ -48,10 +47,19 @@
   margin-top: -10px;
   width:45px;
   border: none;
+  background-color: var(--background);
   box-shadow: 1px 1px 1px var(--gray);
   cursor: pointer;
 }
-.wrap .container .signin label {
+.wrap .container .form #same,
+.wrap .container .form #already{
+  font-size: 14px;
+  display: block;
+  height:30px;
+  padding-left:10px;
+
+}
+.wrap .container .signup label {
   font-weight: 700;
   font-size: var(--font-large);
 }
@@ -73,7 +81,9 @@
   margin-bottom: 0;
   width:90%;
 }
-
+.wrap .container #pwd-check{
+  margin-bottom: 0;
+}
 .wrap .submit{
   margin:auto;
   margin-top:20px;
@@ -128,13 +138,7 @@
   flex-direction: column;
   color:var(--white);
 }
-.wrap .auth .container .form.show #same,
-.wrap .auth .container .form.show #already{
-  font-size: 12px;
-  display: block;
-  margin-bottom: 5px;
-
-}
+ 
 
 .wrap .auth .container input{
   margin-bottom:10px;
