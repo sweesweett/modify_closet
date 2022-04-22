@@ -84,6 +84,29 @@
 .wrap .container #pwd-check{
   margin-bottom: 0;
 }
+.wrap .container select{
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  width:50%;
+  padding:10px;
+  margin:5px 0;
+  background: none;
+  outline: none;
+  font-size: var(--font-large);
+  border: 2px solid var(--purple-btn-border);
+  border-radius: 10px 10px 10px 0;
+  position: relative;
+}
+.wrap .container select option{
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  outline: none;
+  
+}
+.wrap .container #region::before{
+  content: '▼';
+  display: block;
+}
 .wrap .submit{
   margin:auto;
   margin-top:20px;

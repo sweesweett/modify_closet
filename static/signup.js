@@ -56,7 +56,7 @@ function validId(){
 
 // }
 
-    비밀번호
+    //비밀번호
 function checkPw() {
     if (pw.value.length < 4 || pw.value.length > 8) {
         alert('비밀번호는 최소 4자 ~최대 8자로 설정해주세요')

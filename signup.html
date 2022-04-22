@@ -59,6 +59,27 @@
         <span id="same"></span>
         <label for="nickname">닉네임</label>
         <input type="text" name="nickname" id="nickname" placeholder="한글,영문 2자이상 8자이하" onchange="checkNickname()" autocomplete="off">
+        <label for="region">지역 </label>
+        <select id="region">
+          <option value="">-선택하세요-</option>
+          <option value="seoul">서울</option>
+          <option value="incheon">인천시</option>
+          <option value="">경기도</option>
+          <option value="">충청북도</option>
+          <option value="">충청남도</option>
+          <option value="">대전시</option>
+          <option value="">강원도</option>
+          <option value="">전라북도</option>
+          <option value="">전라남도</option>
+          <option value="">광주시</option>
+          <option value="">경상북도</option>
+          <option value="">경상남도</option>
+          <option value="">대구시</option>
+          <option value="">부산시</option>
+          <option value="">제주도</option>
+        </select>
+     
+        <span>*지역은 기온에 따른 옷 추천을 드리기 위해 수집할 뿐, 다른 용도로 사용되지 않습니다.</span>
       </form>
       <button class="submit submit-signup" onclick="submitSignUp()">회원가입</button>
     </div>
