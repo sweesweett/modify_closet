@@ -1,284 +1,310 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's in my closet | 내 옷장</title>
+    <!-- google icons+font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link href="./static/common.css" rel="stylesheet" />
+    <link href="./static/mycloset.css" rel="stylesheet" />
+    <!-- JS -->
+    <script defer src="./static/mycloset.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> What's in my closet | 내 옷장</title>
-  <!-- google icons+font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Festive&family=Do+Hyeon&family=Nanum+Brush+Script&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- css -->
-  <link href="./static/common.css" rel="stylesheet">
-  <link href="./static/mycloset.css" rel="stylesheet">
-  <!-- JS -->
-  <script defer src="./static/mycloset.js"></script>
-</head>
-
-<body>
-  <!-- header -->
-  <header class="header">
-    <div class="inner">
-      <a class="left header_icon" href="index.html">
-        <span class="material-icons">home</span>
-        <span class="icon-name">home</span>
-      </a>
-      <div class="right header_icons">
-        <a class="right header_icon 1" href="/signup.html">
-          <span class="material-icons">
-            assignment
-          </span>
-          <span class="icon-name">join</span>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="inner">
+        <a class="left header_icon" href="index.html">
+          <span class="material-icons">home</span>
+          <span class="icon-name">home</span>
         </a>
-        <a class="right header_icon 2" href="/login.html">
-          <span class="material-icons">
-            login
-          </span>
-          <span class="icon-name">login</span></a>
+        <div class="right header_icons">
+          <a class="right header_icon 1" href="/signup.html">
+            <span class="material-icons"> assignment </span>
+            <span class="icon-name">join</span>
+          </a>
+          <a class="right header_icon 2" href="/login.html">
+            <span class="material-icons"> login </span>
+            <span class="icon-name">login</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <div class="bg"></div>
+    <div class="material-icons" id="closeBtn" onclick="closeBtn()">close</div>
+
+    <!-- 새옷 등록 모달 -->
+    <div class="newcloth">
+      <h2 class="modal title">새 옷 등록하기</h2>
+      <div class="modalContent">
+        <img
+          src="./static/img/newclothalt.jpg"
+          alt="upload image preview"
+          id="imgPreview"
+          style="width: 200px; height: 200px"
+        />
+        <form method="post" enctype="multipart/form-data" id="newcloth">
+          <label
+            >업로드
+            <input
+              type="file"
+              accept="image/*"
+              id="imgfile"
+              onchange="previewFile()"
+            />
+          </label>
+          <label
+            >제목
+            <input
+              type="text"
+              id="clothTitle"
+              autocomplete="off"
+              placeholder="제목을 입력해 주세요"
+            />
+          </label>
+          <label>
+            계절
+            <select name="season" id="clothSeason">
+              <option value="">-선택하세요-</option>
+              <option value="spring">봄</option>
+              <option value="summer">여름</option>
+              <option value="fall">가을</option>
+              <option value="winter">겨울</option>
+            </select>
+          </label>
+          <label>
+            종류
+            <select name="kind" id="clothKind">
+              <option value="">-선택하세요-</option>
+              <option value="outer">겉옷</option>
+              <option value="top">상의</option>
+              <option value="bottom">하의</option>
+              <option value="set">일체형,세트</option>
+            </select>
+            <select name="kindDetail" id="kindDetail">
+              <option value="">-선택하세요-</option>
+            </select>
+          </label>
+          <label>
+            두께
+            <select name="thickness" id="thickness">
+              <option value="">-선택하세요-</option>
+              <option value="thin">얇음</option>
+              <option value="soso">보통</option>
+              <option value="thick">두꺼움</option>
+            </select>
+          </label>
+          <label>
+            패턴
+            <select name="pattern" id="clothPattern">
+              <option value="">-선택하세요-</option>
+              <option value="none">없음</option>
+              <option value="stripe">줄무늬</option>
+              <option value="dotted">땡땡이</option>
+              <option value="illustration">일러스트</option>
+              <option value="checkpatten">체크</option>
+              <option value="etc">그 외</option>
+            </select>
+          </label>
+          <label>
+            색상
+            <select id="clothColor">
+              <option value="">-선택하세요-</option>
+              <option value="red">빨강색</option>
+              <option value="yellow">노랑색</option>
+              <option value="orange">주황색</option>
+              <option value="yellow-green">연두색</option>
+              <option value="green">초록색</option>
+              <option value="skyblue">하늘색</option>
+              <option value="blue">파랑색</option>
+              <option value="blue-green">청록색</option>
+              <option value="brown">갈색</option>
+              <option value="navy">남색</option>
+              <option value="violet">보라색</option>
+              <option value="pink">분홍색</option>
+              <option value="white">흰색</option>
+              <option value="gray">회색</option>
+              <option value="black">검은색</option>
+            </select>
+          </label>
+        </form>
+        <button class="material-icons" onclick="test()">done</button>
       </div>
     </div>
-  </header>
-  <!-- main -->
-  <div class="bg"></div>
-  <div class="material-icons" id="closeBtn" onclick="closeBtn()">close</div>
 
-  
+    <div class="wrap">
+      <!-- 버튼들을 설명하는 말풍선 물음표버튼으로 활성화 -->
+      <div class="explain_closet">
+        <div class="ther_explain">
+          온도를 설정 후 추천을 눌러보세요!<br />온도에 맞는 옷을 추천해드려요.
+        </div>
+        <div class="recommend_explain">
+          버튼을 누르면 오늘 날씨에 <br />맞는 옷을 추천해드려요
+        </div>
+        <div class="newcloth_explain">새 옷을 옷장에 등록해 보세요!</div>
+      </div>
+      <!-- 떠있는 버튼들 -->
+      <div class="btns">
+        <div class="rangeslider">
+          <div class="sliderbg"></div>
+          <input type="text" class="temp_val" value="" />
+          <input type="range" class="temp_range" value="0" min="-20" max="40" />
+          <button class="confirm_temp">추천!</button>
+        </div>
+        <span class="material-icons" id="therBtn">thermostat</span>
+        <div class="qmark" onclick="openExplain()">?</div>
+        <span
+          class="material-icons"
+          roll="button"
+          id="upload_btn"
+          onclick="uploadClothBtn()"
+          >add</span
+        >
+        <span class="material-icons" id="upBtn">arrow_upward</span>
+      </div>
 
-  <!-- 새옷 등록 모달 -->
-  <div class="newcloth">
-    <h2 class="modal title">새 옷 등록하기</h2>
-    <div class="modalContent">
-      <img src="./static/img/newclothalt.jpg" alt="upload image preview" id="imgPreview" style="width:200px; height:200px;">  
-    <form method="post" enctype="multipart/form-data" id="newcloth">
-    <label>업로드
-      <input type="file" accept="image/*" id="imgfile" onchange="previewFile()">
-    </label>  
-    <label>제목
-    <input type="text" id="clothTitle" autocomplete="off" placeholder="제목을 입력해 주세요">
-  </label>  
-    <label>
-        계절
-      <select name="season" id="clothSeason">
-      <option value="">-선택하세요-</option>
-      <option value="spring" >봄</option>
-      <option value="summer" >여름</option>
-      <option value="fall" >가을</option>
-      <option value="winter" >겨울</option>
-      </select>
-    </label>
-    <label>
-    종류
-    <select name="kind" id="clothKind" >
-      <option value="">-선택하세요-</option>
-      <option value="outer">겉옷</option>
-      <option value="top">상의</option>
-      <option value="bottom">하의</option>
-      <option value="set">일체형,세트</option>
-    </select>
-    <select name="kindDetail" id="kindDetail">
-      <option value="">-선택하세요-</option>
-    </select>
-  </label>
-  <label>
-    두께
-    <select name="thickness" id="thickness">
-      <option value="">-선택하세요-</option>
-      <option value="thin">얇음</option>
-      <option value="soso">보통</option>
-      <option value="thick">두꺼움</option>
-    </select>
-  </label>
-  <label>
-    패턴
-    <select name="pattern" id="clothPattern">
-      <option value="">-선택하세요-</option>
-      <option value="none">없음</option>
-      <option value="stripe">줄무늬</option>
-      <option value="dotted">땡땡이</option>
-      <option value="illustration">일러스트</option>
-      <option value="checkpatten">체크</option>
-      <option value="etc">그 외</option>
-    </select>
-  </label> 
-  <label> 색상
-      <select id="clothColor">
-        <option value="">-선택하세요-</option>
-        <option value="red">빨강색</option>
-        <option value="yellow">노랑색</option>
-        <option value="orange">주황색</option>
-        <option value="yellow-green">연두색</option>
-        <option value="green">초록색</option>
-        <option value="skyblue">하늘색</option>
-        <option value="blue">파랑색</option>
-        <option value="blue-green">청록색</option>
-        <option value="brown">갈색</option>
-        <option value="navy">남색</option>
-        <option value="violet">보라색</option>
-        <option value="pink">분홍색</option>
-        <option value="white">흰색</option>
-        <option value="gray">회색</option>
-        <option value="black">검은색</option>
-      </select> 
-  </label>
-    </form>
-      <button class="material-icons" onclick="test()">done</button>
-  </div>
-</div>
-
-
-
-
-  <div class="wrap">
-    <!-- 버튼들을 설명하는 말풍선 물음표버튼으로 활성화 -->
-    <div class="explain_closet">
-      <div class="ther_explain">온도를 설정 후 추천을 눌러보세요!<br>온도에 맞는 옷을 추천해드려요.</div>
-      <div class="recommend_explain">버튼을 누르면 오늘 날씨에 <br>맞는 옷을 추천해드려요 </div>
-      <div class="newcloth_explain">새 옷을 옷장에 등록해 보세요!</div>
+      <!-- info - 상단에 날씨설명+ 추천하기 버튼 -->
+      <section class="info">
+        <h2 class="title">
+          <span id="username">테스트일곱글자</span> 님 안녕하세요!
+        </h2>
+        <div class="desc">
+          <span
+            >서울시의 날씨는 10도 흐림(이모지)<br />오늘의 날씨에 맞는 옷을
+            추천해 드릴까요?</span
+          >
+          <button class="recommend">추천하기</button>
+        </div>
+      </section>
+      <!-- content -->
+      <section class="content">
+        <!-- 목록형 사진형 전환버튼 -->
+        <div class="changeview">
+          <button class="material-icons" id="listview">view_list</button>
+          <button class="material-icons" id="bigview">view_stream</button>
+        </div>
+        <div class="main-wrap">
+          <div class="card big">
+            <!-- 수정해야함 -->
+            <div class="changestatus">
+              <button class="modify Btn">수정</button>
+              <button class="delete Btn">삭제</button>
+            </div>
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="card big">
+            <img class="img" src="" alt="" />
+            <div class="titletags">
+              <span class="cardtitle">여기에 제목이 들어가요!</span>
+              <div class="tagsgroup">
+                <button>#여름</button>
+                <button>#아우터</button>
+                <button>#빨강</button>
+                <button>#얇음</button>
+              </div>
+            </div>
+          </div>
+          <div class="nothing">
+            <div class="material-icons">checkroom</div>
+            <p class="empty">옷장이 텅 비었어요!<br />( ˃̣̣̥᷄⌓˂̣̣̥᷅ )</p>
+          </div>
+        </div>
+      </section>
     </div>
-    <!-- 떠있는 버튼들 -->
-    <div class="btns">
-      <div class="rangeslider">
-        <div class="sliderbg"></div>
-        <input type="text" class="temp_val" value="">
-        <input type="range" class="temp_range" value="0" min="-20" max="40">
-        <button class="confirm_temp">추천!</button>
-      </div>
-      <span class="material-icons" id="therBtn" onclick="therBtnOpen()">thermostat</span>
-      <div class="qmark" onclick="openExplain()">?</div>
-      <span class="material-icons" roll="button" id="upload_btn" onclick="uploadClothBtn()">add</span>
-      <span class="material-icons" id="upBtn">arrow_upward</span>
-
-    </div>
-
-    <!-- info - 상단에 날씨설명+ 추천하기 버튼 -->
-    <section class="info">
-      <h2 class="title"><span id="username">테스트일곱글자</span> 님 안녕하세요!</h2>
-      <div class="desc">
-        <span>서울시의 날씨는 10도 흐림(이모지)<br>오늘의 날씨에 맞는 옷을 추천해 드릴까요?</span>
-        <button class="recommend">추천하기</button>
-      </div>
-    </section>
-    <!-- content -->
-    <section class="content">
-      <!-- 목록형 사진형 전환버튼 -->
-      <div class="changeview">
-        <button class="material-icons" id="listview">view_list</button>
-        <button class="material-icons" id="bigview">view_stream</button>
-      </div>
-      <div class="main-wrap">
-        <div class="card big">
-          <!-- 수정해야함 -->
-          <div class="changestatus">
-            <button class="modify Btn">수정</button>
-            <button class="delete Btn">삭제</button>
-          </div>
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="card big">
-          <img class="img" src="" alt="">
-          <div class="titletags">
-            <span class="cardtitle">여기에 제목이 들어가요!</span>
-            <div class="tagsgroup">
-              <button>#여름</button>
-              <button>#아우터</button>
-              <button>#빨강</button>
-              <button>#얇음</button>
-            </div>
-          </div>
-        </div>
-        <div class="nothing">
-          <div class="material-icons">checkroom</div>
-          <p class="empty">옷장이 텅 비었어요!<br>( ˃̣̣̥᷄⌓˂̣̣̥᷅ )</p>
-        </div>
-      </div>
-    </section>
-  </div>
-</body>
-
+  </body>
 </html>
