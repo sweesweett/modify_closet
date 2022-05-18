@@ -8,18 +8,17 @@ let explainOpen = false;
 let newClothOpen = false;
 const imgFile = document.getElementById('imgfile');
 const clothKind = document.getElementById('clothKind');
-const clothDetail = document.getElementById('kindDetail');
 
-// 수정필요1
-tempRange.oninput = rangeInput;
-temperature.oninput = tempInput;
+tempRange.oninput = tempInput(temperature);
+temperature.oninput = tempInput(tempRange);
 
-function rangeInput(e) {
-  temperature.value = e.target.value;
+//온도계 input과 슬라이더 값 동일시하기!
+function tempInput(el) {
+  return function (e) {
+    el.value = e.target.value;
+  };
 }
-function tempInput(e) {
-  tempRange.value = e.target.value;
-}
+
 //위로올라가기
 window.addEventListener('scroll', function () {
   let upBtn = document.querySelector('#upBtn');
@@ -33,18 +32,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-//온도계 버튼 오픈했을 때
-// function therBtnOpen(){
-//   if(btnOpen===false){
-//     visibleSlider.style.display='flex';
-//     btnOpen=!btnOpen;
-
-//   }
-//   else{
-//     visibleSlider.style.display='none';
-//     btnOpen=!btnOpen;
-//   }
-// }
+// 온도계버튼 클릭해서 슬라이더 등장/ 사라짐  - 배운 클로저로 해봄!
 function visibleSlider() {
   let isVisible = false;
   function changeSliderVisible() {
@@ -62,6 +50,7 @@ function visibleSlider() {
   return changeSliderVisible;
 }
 therBtn.onclick = visibleSlider();
+
 //온도계 추천 버튼 눌렀을 시 통신(?)
 function therRecommand() {}
 //목록형 사진형 뷰 바꿀 때
@@ -169,7 +158,10 @@ function test() {
 }
 
 //옷장등록시 종류별 세부 종류 띄우기
+//innerHTML이 지양된다는데 어떻게 저걸 다 입력하지?
+
 clothKind.addEventListener('change', () => {
+  const clothDetail = document.getElementById('kindDetail');
   switch (clothKind.value) {
     case 'outer':
       clothDetail.innerHTML = `<option value="coat">코트</option>
