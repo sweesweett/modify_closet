@@ -130,6 +130,7 @@ function test() {
   const thickness = document.getElementById('thickness');
   const color = document.getElementById('clothColor');
   const pattern = document.getElementById('clothPattern');
+  const clothDetail = document.getElementById('kindDetail');
 
   if (
     clothTitle.value !== '' &&
@@ -159,43 +160,68 @@ function test() {
 
 //옷장등록시 종류별 세부 종류 띄우기
 //innerHTML이 지양된다는데 어떻게 저걸 다 입력하지?
-
 clothKind.addEventListener('change', () => {
   const clothDetail = document.getElementById('kindDetail');
+  const hadchildren = (el) => {
+    while (el.hasChildNodes()) {
+      el.removeChild(el.firstChild);
+    }
+  };
+  function tochangeDetail(obj, parent) {
+    hadchildren(parent);
+    for (key in obj) {
+      let elOp = document.createElement('option');
+      elOp.value = key;
+      elOp.textContent = obj[key];
+      parent.append(elOp);
+    }
+  }
+  let clothes = {};
   switch (clothKind.value) {
     case 'outer':
-      clothDetail.innerHTML = `<option value="coat">코트</option>
-    <option value="jacket">자켓</option>
-    <option value="parka">패딩</option>
-    <option value="zipup">집업</option>
-    <option value="cardigan">가디건</option>
-    <option value="etc">그 외</option>`;
+      clothes = {
+        coat: '코트',
+        jacket: '자켓',
+        parka: '패딩',
+        zipup: '집업',
+        cardigan: '가디건',
+        etc: '그 외',
+      };
+      tochangeDetail(clothes, clothDetail);
       break;
     case 'top':
-      clothDetail.innerHTML = `<option value="tshirt">반팔티</option>
-    <option value="sleeveless">민소매</option>
-    <option value="sweatshirt">맨투맨</option>
-    <option value="shirt">셔츠</option>
-    <option value="blouse">블라우스</option>
-    <option value="hood">후드티</option>
-    <option value="knit">니트</option>
-    <option value="pkshirt">pk셔츠</option>
-    <option value="vest">조끼</option>`;
+      clothes = {
+        sleeveless: '민소매',
+        sweatshirt: '맨투맨',
+        shirt: '셔츠',
+        blouse: '블라우스',
+        hood: '후드티',
+        knit: '니트',
+        pkshirt: 'pk셔츠',
+        vest: '조끼',
+      };
+      tochangeDetail(clothes, clothDetail);
       break;
     case 'bottom':
-      clothDetail.innerHTML = `<option value="pants">팬츠</option>
-    <option value="slack">슬랙스</option>
-    <option value="shorts">반바지</option>
-    <option value="very-shorts">숏팬츠</option>
-    <option value="skirt">스커트</option>
-    <option value="etc">그 외</option>`;
+      clothes = {
+        pants: '팬츠',
+        slack: '슬랙스',
+        shorts: '반바지',
+        veryShorts: '숏팬츠',
+        skirt: '스커트',
+        etc: '그 외',
+      };
+      tochangeDetail(clothes, clothDetail);
       break;
     case 'set':
-      clothDetail.innerHTML = `<option value="jumpsuit">점프수트</option>
-    <option value="dress">원피스</option>
-    <option value="suit">수트</option>
-    <option value="clothSet">세트</option>
-    <option value="etc">그 외</option>`;
+      clothes = {
+        jumpstuit: '점프수트',
+        dress: '원피스',
+        suit: '수트',
+        clothSet: '세트',
+        etc: '그 외',
+      };
+      tochangeDetail(clothes, clothDetail);
       break;
     default:
       clothDetail.innerHTML = `<option value="notchoose">선택하세요</option>`;
