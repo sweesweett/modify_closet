@@ -458,13 +458,12 @@
   margin: auto;
 }
 .wrap .content .main-wrap .big .titletags {
-  width: 280px;
+  width: 250px;
   margin: 0 auto;
   padding: 0 5px;
 }
-/* .wrap .content .main-wrap .list .titletags .tagsgroup{
-  
-} */
+.wrap .content .main-wrap .list .titletags .tagsgroup {
+}
 .wrap .content .main-wrap .nothing {
   height: calc(100vh - 250px);
   display: flex;
